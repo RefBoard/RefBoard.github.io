@@ -5,13 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RefBoard - 크리에이티브 협업 레퍼런스 보드</title>
+
+    <!-- Open Graph Tags for Link Previews -->
+    <meta property="og:title" content="RefBoard - Shared Workspace" />
+    <meta property="og:description" content="Click to open this board directly in RefBoard for Windows." />
+    <!-- Use a suitable image URL. If you have one in the repo, link it. Using a placeholder or app icon is good. -->
+    <meta property="og:image" content="https://trackk81.github.io/images/app-screenshot.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://trackk81.github.io/" />
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3835772846253175"
-            crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" as="style" crossorigin
         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
+
+    <!-- Deep Link Auto-Launch Script -->
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const boardId = params.get('boardId');
+
+            if (boardId) {
+                // Construct the custom protocol URL
+                // We use the full query string so boardId, x, y, scale are all passed
+                const deepLink = 'refboard://?' + params.toString();
+                console.log('Attempting to open desktop app:', deepLink);
+
+                // Attempt to redirect to the custom protocol
+                window.location.href = deepLink;
+
+                // Optional: Show a message to the user
+                // We'll let the rest of the page load so they can see the "Download" button if they don't have the app.
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -220,7 +250,7 @@
         function switchLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('language', lang);
-            
+
             // Update all elements with data-i18n attribute
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
