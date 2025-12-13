@@ -113,15 +113,57 @@ header .container {
     font-size: 1.4rem;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
 nav a {
-    margin-left: 2rem;
     font-weight: 500;
     color: var(--text-body);
     font-size: 0.95rem;
+    transition: color 0.2s;
 }
 
 nav a:hover {
     color: var(--primary);
+}
+
+.language-switcher {
+    margin-left: 1rem;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    background: #fff;
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-1px);
+}
+
+.lang-btn i {
+    font-size: 1rem;
+}
+
+#langText {
+    min-width: 24px;
+    text-align: center;
 }
 
 /* Hero Section */

@@ -22,9 +22,15 @@
                 <span>RefBoard</span>
             </a>
             <nav>
-                <a href="#features">기능</a>
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="#download">다운로드</a>
+                <a href="#features" data-i18n="nav.features">기능</a>
+                <a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a>
+                <a href="#download" data-i18n="nav.download">다운로드</a>
+                <div class="language-switcher">
+                    <button id="langBtn" class="lang-btn" aria-label="Language">
+                        <i class="fa-solid fa-globe"></i>
+                        <span id="langText">한</span>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
@@ -32,19 +38,19 @@
     <main>
         <section class="hero">
             <div class="container">
-                <div class="hero-badge">Ver 0.0.3 Now Available</div>
+                <div class="hero-badge" data-i18n="hero.badge">Ver 0.0.3 Now Available</div>
                 <h2>
-                    팀과 함께 완성하는<br>
-                    <span class="gradient-text">무한한 크리에이티브</span>
+                    <span data-i18n="hero.title.line1">팀과 함께 완성하는</span><br>
+                    <span class="gradient-text" data-i18n="hero.title.line2">무한한 크리에이티브</span>
                 </h2>
-                <p>
+                <p data-i18n="hero.description">
                     이미지, 비디오, PSD 파일을 자유롭게 배치하고<br>
                     실시간으로 아이디어를 공유하세요. 디자인 협업의 새로운 기준.
                 </p>
                 <div id="download">
                     <a href="downloads/RefBoard-Setup-0.0.3.exe" class="btn-primary" download>
                         <i class="fa-brands fa-windows"></i>
-                        Windows용 다운로드
+                        <span data-i18n="hero.download">Windows용 다운로드</span>
                     </a>
                 </div>
 
@@ -63,8 +69,8 @@
         <section id="features" class="features">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 4rem;">
-                    <h3>강력한 기능</h3>
-                    <p style="color:var(--text-light)">디자이너와 아티스트를 위한 최적의 툴</p>
+                    <h3 data-i18n="features.title">강력한 기능</h3>
+                    <p style="color:var(--text-light)" data-i18n="features.subtitle">디자이너와 아티스트를 위한 최적의 툴</p>
                 </div>
 
                 <div class="feature-grid">
@@ -72,56 +78,56 @@
                         <div class="feature-icon">
                             <i class="fa-solid fa-maximize"></i>
                         </div>
-                        <h4>무한 캔버스</h4>
-                        <p>공간 제약 없이 수천 장의 레퍼런스를 자유롭게 배치하고 정리할 수 있습니다.</p>
+                        <h4 data-i18n="features.infinite.title">무한 캔버스</h4>
+                        <p data-i18n="features.infinite.desc">공간 제약 없이 수천 장의 레퍼런스를 자유롭게 배치하고 정리할 수 있습니다.</p>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fa-regular fa-file-image"></i>
                         </div>
-                        <h4>PSD 파일 완벽 지원</h4>
-                        <p>Photoshop 파일을 변환 없이 바로 열고, 수정 사항을 실시간으로 확인하세요.</p>
+                        <h4 data-i18n="features.psd.title">PSD 파일 완벽 지원</h4>
+                        <p data-i18n="features.psd.desc">Photoshop 파일을 변환 없이 바로 열고, 수정 사항을 실시간으로 확인하세요.</p>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fa-solid fa-users"></i>
                         </div>
-                        <h4>실시간 협업</h4>
-                        <p>팀원들을 초대하여 같은 화면에서 동시에 작업하고 피드백을 주고받으세요.</p>
+                        <h4 data-i18n="features.collab.title">실시간 협업</h4>
+                        <p data-i18n="features.collab.desc">팀원들을 초대하여 같은 화면에서 동시에 작업하고 피드백을 주고받으세요.</p>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fa-brands fa-google-drive"></i>
                         </div>
-                        <h4>Google Drive 연동</h4>
-                        <p>모든 보드는 Google Drive에 안전하게 저장되며 어디서든 접근 가능합니다.</p>
+                        <h4 data-i18n="features.drive.title">Google Drive 연동</h4>
+                        <p data-i18n="features.drive.desc">모든 보드는 Google Drive에 안전하게 저장되며 어디서든 접근 가능합니다.</p>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fa-solid fa-pen-nib"></i>
                         </div>
-                        <h4>스마트 드로잉</h4>
-                        <p>펜이나 형광펜 도구로 레퍼런스 위에 직관적인 메모를 남기세요.</p>
+                        <h4 data-i18n="features.drawing.title">스마트 드로잉</h4>
+                        <p data-i18n="features.drawing.desc">펜이나 형광펜 도구로 레퍼런스 위에 직관적인 메모를 남기세요.</p>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fa-solid fa-link"></i>
                         </div>
-                        <h4>논리적 그룹핑</h4>
-                        <p>관련 자료를 그룹으로 묶거나 화살표로 연결하여 흐름을 시각화하세요.</p>
+                        <h4 data-i18n="features.grouping.title">논리적 그룹핑</h4>
+                        <p data-i18n="features.grouping.desc">관련 자료를 그룹으로 묶거나 화살표로 연결하여 흐름을 시각화하세요.</p>
                     </div>
 
                     <div class="feature-item">
                         <div class="feature-icon">
                             <i class="fa-solid fa-wand-magic-sparkles"></i>
                         </div>
-                        <h4>AI 이미지 생성</h4>
-                        <p>Google Gemini AI를 활용하여 프롬프트만으로 고품질 이미지를 생성하고 바로 캔버스에 추가하세요.</p>
+                        <h4 data-i18n="features.ai.title">AI 이미지 생성</h4>
+                        <p data-i18n="features.ai.desc">Google Gemini AI를 활용하여 프롬프트만으로 고품질 이미지를 생성하고 바로 캔버스에 추가하세요.</p>
                     </div>
                 </div>
             </div>
@@ -131,12 +137,111 @@
     <footer>
         <div class="container">
             <div class="footer-links" style="margin-bottom: 1rem;">
-                <a href="privacy.html" class="footer-link">개인정보처리방침</a>
-                <a href="terms.html" class="footer-link">이용약관</a>
+                <a href="privacy.html" class="footer-link" data-i18n="footer.privacy">개인정보처리방침</a>
+                <a href="terms.html" class="footer-link" data-i18n="footer.terms">이용약관</a>
             </div>
-            <p class="copyright">&copy; 2024 RefBoard Team. All rights reserved.</p>
+            <p class="copyright" data-i18n="footer.copyright">&copy; 2024 RefBoard Team. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Language translations
+        const translations = {
+            ko: {
+                'nav.features': '기능',
+                'nav.privacy': '개인정보처리방침',
+                'nav.download': '다운로드',
+                'hero.badge': 'Ver 0.0.3 Now Available',
+                'hero.title.line1': '팀과 함께 완성하는',
+                'hero.title.line2': '무한한 크리에이티브',
+                'hero.description': '이미지, 비디오, PSD 파일을 자유롭게 배치하고<br>실시간으로 아이디어를 공유하세요. 디자인 협업의 새로운 기준.',
+                'hero.download': 'Windows용 다운로드',
+                'features.title': '강력한 기능',
+                'features.subtitle': '디자이너와 아티스트를 위한 최적의 툴',
+                'features.infinite.title': '무한 캔버스',
+                'features.infinite.desc': '공간 제약 없이 수천 장의 레퍼런스를 자유롭게 배치하고 정리할 수 있습니다.',
+                'features.psd.title': 'PSD 파일 완벽 지원',
+                'features.psd.desc': 'Photoshop 파일을 변환 없이 바로 열고, 수정 사항을 실시간으로 확인하세요.',
+                'features.collab.title': '실시간 협업',
+                'features.collab.desc': '팀원들을 초대하여 같은 화면에서 동시에 작업하고 피드백을 주고받으세요.',
+                'features.drive.title': 'Google Drive 연동',
+                'features.drive.desc': '모든 보드는 Google Drive에 안전하게 저장되며 어디서든 접근 가능합니다.',
+                'features.drawing.title': '스마트 드로잉',
+                'features.drawing.desc': '펜이나 형광펜 도구로 레퍼런스 위에 직관적인 메모를 남기세요.',
+                'features.grouping.title': '논리적 그룹핑',
+                'features.grouping.desc': '관련 자료를 그룹으로 묶거나 화살표로 연결하여 흐름을 시각화하세요.',
+                'features.ai.title': 'AI 이미지 생성',
+                'features.ai.desc': 'Google Gemini AI를 활용하여 프롬프트만으로 고품질 이미지를 생성하고 바로 캔버스에 추가하세요.',
+                'footer.privacy': '개인정보처리방침',
+                'footer.terms': '이용약관',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            },
+            en: {
+                'nav.features': 'Features',
+                'nav.privacy': 'Privacy Policy',
+                'nav.download': 'Download',
+                'hero.badge': 'Ver 0.0.3 Now Available',
+                'hero.title.line1': 'Create Infinite Creativity',
+                'hero.title.line2': 'Together with Your Team',
+                'hero.description': 'Freely arrange images, videos, and PSD files<br>and share ideas in real-time. The new standard for design collaboration.',
+                'hero.download': 'Download for Windows',
+                'features.title': 'Powerful Features',
+                'features.subtitle': 'The perfect tool for designers and artists',
+                'features.infinite.title': 'Infinite Canvas',
+                'features.infinite.desc': 'Arrange and organize thousands of references without space constraints.',
+                'features.psd.title': 'Perfect PSD Support',
+                'features.psd.desc': 'Open Photoshop files directly without conversion and check modifications in real-time.',
+                'features.collab.title': 'Real-time Collaboration',
+                'features.collab.desc': 'Invite team members to work simultaneously on the same screen and exchange feedback.',
+                'features.drive.title': 'Google Drive Integration',
+                'features.drive.desc': 'All boards are safely stored on Google Drive and accessible from anywhere.',
+                'features.drawing.title': 'Smart Drawing',
+                'features.drawing.desc': 'Leave intuitive notes on references with pen or highlighter tools.',
+                'features.grouping.title': 'Logical Grouping',
+                'features.grouping.desc': 'Group related materials or connect them with arrows to visualize workflows.',
+                'features.ai.title': 'AI Image Generation',
+                'features.ai.desc': 'Generate high-quality images with just prompts using Google Gemini AI and add them directly to your canvas.',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms of Service',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            }
+        };
+
+        // Get saved language or default to Korean
+        let currentLang = localStorage.getItem('language') || 'ko';
+
+        // Language switcher function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update language button text
+            document.getElementById('langText').textContent = lang === 'ko' ? '한' : 'EN';
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage(currentLang);
+
+            // Language button click handler
+            document.getElementById('langBtn').addEventListener('click', () => {
+                const newLang = currentLang === 'ko' ? 'en' : 'ko';
+                switchLanguage(newLang);
+            });
+        });
+    </script>
 </body>
 
 </html>
