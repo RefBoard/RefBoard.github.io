@@ -25,12 +25,6 @@
                 <a href="#features" data-i18n="nav.features">기능</a>
                 <a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a>
                 <a href="#download" data-i18n="nav.download">다운로드</a>
-                <div class="language-switcher">
-                    <button id="langBtn" class="lang-btn" aria-label="Language">
-                        <i class="fa-solid fa-globe"></i>
-                        <span id="langText">한</span>
-                    </button>
-                </div>
             </nav>
         </div>
     </header>
@@ -47,11 +41,19 @@
                     이미지, 비디오, PSD 파일을 자유롭게 배치하고<br>
                     실시간으로 아이디어를 공유하세요. 디자인 협업의 새로운 기준.
                 </p>
-                <div id="download">
+                <div id="download" class="download-section">
                     <a href="downloads/RefBoard-Setup-0.0.3.exe" class="btn-primary" download>
                         <i class="fa-brands fa-windows"></i>
                         <span data-i18n="hero.download">Windows용 다운로드</span>
                     </a>
+                    <div class="language-switcher">
+                        <button id="langBtn" class="lang-btn" aria-label="Language">
+                            <i class="fa-solid fa-globe"></i>
+                            <span class="lang-label" data-i18n="lang.korean">한국어</span>
+                            <span class="lang-separator">/</span>
+                            <span class="lang-label" data-i18n="lang.english">English</span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- App Screenshot -->
@@ -174,7 +176,9 @@
                 'features.ai.desc': 'Google Gemini AI를 활용하여 프롬프트만으로 고품질 이미지를 생성하고 바로 캔버스에 추가하세요.',
                 'footer.privacy': '개인정보처리방침',
                 'footer.terms': '이용약관',
-                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.',
+                'lang.korean': '한국어',
+                'lang.english': 'English'
             },
             en: {
                 'nav.features': 'Features',
@@ -203,7 +207,9 @@
                 'features.ai.desc': 'Generate high-quality images with just prompts using Google Gemini AI and add them directly to your canvas.',
                 'footer.privacy': 'Privacy Policy',
                 'footer.terms': 'Terms of Service',
-                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.',
+                'lang.korean': '한국어',
+                'lang.english': 'English'
             }
         };
 
@@ -227,8 +233,15 @@
                 }
             });
 
-            // Update language button text
-            document.getElementById('langText').textContent = lang === 'ko' ? '한' : 'EN';
+            // Update language button active state
+            const langLabels = document.querySelectorAll('.lang-label');
+            langLabels.forEach((label, index) => {
+                if ((lang === 'ko' && index === 0) || (lang === 'en' && index === 1)) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
         }
 
         // Initialize language on page load
