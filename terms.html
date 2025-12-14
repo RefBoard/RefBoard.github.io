@@ -4,120 +4,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이용약관 - RefBoard</title>
+    <title data-i18n="terms.title">이용약관 - RefBoard</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Deep Link Auto-Launch Script -->
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const boardId = params.get('boardId');
+
+            if (boardId) {
+                const deepLink = 'refboard://?' + params.toString();
+                console.log('Attempting to open desktop app:', deepLink);
+                window.location.href = deepLink;
+            }
+        })();
+    </script>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <h1>RefBoard</h1>
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>RefBoard</span>
+            </a>
             <nav>
-                <a href="index.html">홈</a>
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="terms.html">이용약관</a>
+                <a href="index.html" data-i18n="nav.home">홈</a>
+                <a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a>
+                <a href="terms.html" data-i18n="nav.terms">이용약관</a>
+                <div class="language-switcher">
+                    <button id="langBtn" class="lang-btn" aria-label="Language">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="lang-label" data-i18n="lang.korean">한국어</span>
+                        <span class="lang-separator">/</span>
+                        <span class="lang-label" data-i18n="lang.english">English</span>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
 
-    <main class="document">
+    <main class="document-page">
         <div class="container">
-            <h2>이용약관</h2>
-            <p class="updated">최종 업데이트: 2024년 12월</p>
+            <h2 data-i18n="terms.heading">이용약관</h2>
+            <p class="document-meta" data-i18n="terms.updated">최종 업데이트: 2024년 12월</p>
 
-            <section>
-                <h3>1. 서비스 개요</h3>
-                <p>RefBoard는 크리에이티브 작업을 위한 협업 레퍼런스 보드 애플리케이션입니다. 본 약관은 RefBoard 사용에 관한 조건을 명시합니다.</p>
-            </section>
+            <div class="document-content">
+                <section>
+                    <h3 data-i18n="terms.sec1.title">1. 서비스 개요</h3>
+                    <p data-i18n="terms.sec1.desc">RefBoard는 크리에이티브 작업을 위한 협업 레퍼런스 보드 애플리케이션입니다. 본 약관은 RefBoard 사용에 관한
+                        조건을 명시합니다.</p>
+                </section>
 
-            <section>
-                <h3>2. 서비스 이용</h3>
-                <ul>
-                    <li>RefBoard는 무료로 제공됩니다</li>
-                    <li>Google 계정을 통한 로그인이 필요합니다</li>
-                    <li>사용자는 서비스를 적법한 목적으로만 사용해야 합니다</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec2.title">2. 서비스 이용</h3>
+                    <ul>
+                        <li data-i18n="terms.sec2.li1">RefBoard는 무료로 제공됩니다</li>
+                        <li data-i18n="terms.sec2.li2">Google 계정을 통한 로그인이 필요합니다</li>
+                        <li data-i18n="terms.sec2.li3">사용자는 서비스를 적법한 목적으로만 사용해야 합니다</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>3. 사용자 콘텐츠</h3>
-                <ul>
-                    <li>사용자가 업로드한 모든 콘텐츠의 권리는 사용자에게 있습니다</li>
-                    <li>RefBoard는 사용자 콘텐츠를 사용하거나 저장하지 않습니다 (Google Drive에 저장됨)</li>
-                    <li>사용자는 저작권이 있는 콘텐츠만 업로드해야 합니다</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec3.title">3. 사용자 콘텐츠</h3>
+                    <ul>
+                        <li data-i18n="terms.sec3.li1">사용자가 업로드한 모든 콘텐츠의 권리는 사용자에게 있습니다</li>
+                        <li data-i18n="terms.sec3.li2">RefBoard는 사용자 콘텐츠를 사용하거나 저장하지 않습니다 (Google Drive에 저장됨)</li>
+                        <li data-i18n="terms.sec3.li3">사용자는 저작권이 있는 콘텐츠만 업로드해야 합니다</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>4. 금지 행위</h3>
-                <p>다음 행위는 금지됩니다:</p>
-                <ul>
-                    <li>불법적인 콘텐츠 업로드 또는 공유</li>
-                    <li>타인의 저작권 침해</li>
-                    <li>서비스의 정상적인 작동을 방해하는 행위</li>
-                    <li>타인의 개인정보 무단 수집 또는 사용</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec4.title">4. 금지 행위</h3>
+                    <p data-i18n="terms.sec4.desc">다음 행위는 금지됩니다:</p>
+                    <ul>
+                        <li data-i18n="terms.sec4.li1">불법적인 콘텐츠 업로드 또는 공유</li>
+                        <li data-i18n="terms.sec4.li2">타인의 저작권 침해</li>
+                        <li data-i18n="terms.sec4.li3">서비스의 정상적인 작동을 방해하는 행위</li>
+                        <li data-i18n="terms.sec4.li4">타인의 개인정보 무단 수집 또는 사용</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>5. 서비스 제공 및 변경</h3>
-                <ul>
-                    <li>RefBoard는 사전 통지 없이 서비스를 변경하거나 중단할 수 있습니다</li>
-                    <li>서비스는 "있는 그대로" 제공되며, 특정 목적에 대한 적합성을 보증하지 않습니다</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec5.title">5. 서비스 제공 및 변경</h3>
+                    <ul>
+                        <li data-i18n="terms.sec5.li1">RefBoard는 사전 통지 없이 서비스를 변경하거나 중단할 수 있습니다</li>
+                        <li data-i18n="terms.sec5.li2">서비스는 "있는 그대로" 제공되며, 특정 목적에 대한 적합성을 보증하지 않습니다</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>6. 책임의 제한</h3>
-                <ul>
-                    <li>RefBoard는 서비스 사용으로 인한 직접적 또는 간접적 손해에 대해 책임지지 않습니다</li>
-                    <li>사용자 데이터의 손실에 대해 RefBoard는 책임지지 않습니다 (정기 백업 권장)</li>
-                    <li>제3자 서비스(Google Drive, Firebase)의 장애로 인한 문제는 해당 서비스 제공자의 책임입니다</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec6.title">6. 책임의 제한</h3>
+                    <ul>
+                        <li data-i18n="terms.sec6.li1">RefBoard는 서비스 사용으로 인한 직접적 또는 간접적 손해에 대해 책임지지 않습니다</li>
+                        <li data-i18n="terms.sec6.li2">사용자 데이터의 손실에 대해 RefBoard는 책임지지 않습니다 (정기 백업 권장)</li>
+                        <li data-i18n="terms.sec6.li3">제3자 서비스(Google Drive, Firebase)의 장애로 인한 문제는 해당 서비스 제공자의 책임입니다
+                        </li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>7. 지적재산권</h3>
-                <ul>
-                    <li>RefBoard의 소프트웨어 및 디자인에 대한 모든 권리는 RefBoard에 있습니다</li>
-                    <li>사용자는 소프트웨어를 리버스 엔지니어링, 수정, 재배포할 수 없습니다</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec7.title">7. 지적재산권</h3>
+                    <ul>
+                        <li data-i18n="terms.sec7.li1">RefBoard의 소프트웨어 및 디자인에 대한 모든 권리는 RefBoard에 있습니다</li>
+                        <li data-i18n="terms.sec7.li2">사용자는 소프트웨어를 리버스 엔지니어링, 수정, 재배포할 수 없습니다</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>8. 계정 해지</h3>
-                <ul>
-                    <li>사용자는 언제든지 계정을 삭제할 수 있습니다</li>
-                    <li>약관 위반 시 RefBoard는 사용자 계정을 정지하거나 삭제할 수 있습니다</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec8.title">8. 계정 해지</h3>
+                    <ul>
+                        <li data-i18n="terms.sec8.li1">사용자는 언제든지 계정을 삭제할 수 있습니다</li>
+                        <li data-i18n="terms.sec8.li2">약관 위반 시 RefBoard는 사용자 계정을 정지하거나 삭제할 수 있습니다</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>9. 약관 변경</h3>
-                <p>본 약관은 필요에 따라 변경될 수 있으며, 변경 시 앱 내에서 공지합니다. 변경된 약관에 동의하지 않는 경우 서비스 사용을 중단해야 합니다.</p>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec9.title">9. 약관 변경</h3>
+                    <p data-i18n="terms.sec9.desc">본 약관은 필요에 따라 변경될 수 있으며, 변경 시 앱 내에서 공지합니다. 변경된 약관에 동의하지 않는 경우 서비스 사용을
+                        중단해야 합니다.</p>
+                </section>
 
-            <section>
-                <h3>10. 준거법 및 관할</h3>
-                <p>본 약관은 대한민국 법률에 따라 해석되며, 분쟁 발생 시 관할 법원은 대한민국 법원으로 합니다.</p>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec10.title">10. 준거법 및 관할</h3>
+                    <p data-i18n="terms.sec10.desc">본 약관은 대한민국 법률에 따라 해석되며, 분쟁 발생 시 관할 법원은 대한민국 법원으로 합니다.</p>
+                </section>
 
-            <section>
-                <h3>11. 문의</h3>
-                <p>약관 관련 문의사항이 있으시면 이메일로 연락 주세요.</p>
-            </section>
+                <section>
+                    <h3 data-i18n="terms.sec11.title">11. 문의</h3>
+                    <p data-i18n="terms.sec11.desc">약관 관련 문의사항이 있으시면 이메일로 연락 주세요.</p>
+                </section>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 RefBoard. All rights reserved.</p>
-            <p>
-                <a href="privacy.html">개인정보처리방침</a> |
-                <a href="terms.html">이용약관</a>
-            </p>
+            <div class="footer-links" style="margin-bottom: 1rem;">
+                <a href="privacy.html" class="footer-link" data-i18n="footer.privacy">개인정보처리방침</a>
+                <a href="terms.html" class="footer-link" data-i18n="footer.terms">이용약관</a>
+            </div>
+            <p class="copyright" data-i18n="footer.copyright">&copy; 2024 RefBoard Team. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Language translations
+        const translations = {
+            ko: {
+                'terms.title': '이용약관 - RefBoard',
+                'nav.home': '홈',
+                'nav.privacy': '개인정보처리방침',
+                'nav.terms': '이용약관',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'terms.heading': '이용약관',
+                'terms.updated': '최종 업데이트: 2024년 12월',
+                'terms.sec1.title': '1. 서비스 개요',
+                'terms.sec1.desc': 'RefBoard는 크리에이티브 작업을 위한 협업 레퍼런스 보드 애플리케이션입니다. 본 약관은 RefBoard 사용에 관한 조건을 명시합니다.',
+                'terms.sec2.title': '2. 서비스 이용',
+                'terms.sec2.li1': 'RefBoard는 무료로 제공됩니다',
+                'terms.sec2.li2': 'Google 계정을 통한 로그인이 필요합니다',
+                'terms.sec2.li3': '사용자는 서비스를 적법한 목적으로만 사용해야 합니다',
+                'terms.sec3.title': '3. 사용자 콘텐츠',
+                'terms.sec3.li1': '사용자가 업로드한 모든 콘텐츠의 권리는 사용자에게 있습니다',
+                'terms.sec3.li2': 'RefBoard는 사용자 콘텐츠를 사용하거나 저장하지 않습니다 (Google Drive에 저장됨)',
+                'terms.sec3.li3': '사용자는 저작권이 있는 콘텐츠만 업로드해야 합니다',
+                'terms.sec4.title': '4. 금지 행위',
+                'terms.sec4.desc': '다음 행위는 금지됩니다:',
+                'terms.sec4.li1': '불법적인 콘텐츠 업로드 또는 공유',
+                'terms.sec4.li2': '타인의 저작권 침해',
+                'terms.sec4.li3': '서비스의 정상적인 작동을 방해하는 행위',
+                'terms.sec4.li4': '타인의 개인정보 무단 수집 또는 사용',
+                'terms.sec5.title': '5. 서비스 제공 및 변경',
+                'terms.sec5.li1': 'RefBoard는 사전 통지 없이 서비스를 변경하거나 중단할 수 있습니다',
+                'terms.sec5.li2': '서비스는 "있는 그대로" 제공되며, 특정 목적에 대한 적합성을 보증하지 않습니다',
+                'terms.sec6.title': '6. 책임의 제한',
+                'terms.sec6.li1': 'RefBoard는 서비스 사용으로 인한 직접적 또는 간접적 손해에 대해 책임지지 않습니다',
+                'terms.sec6.li2': '사용자 데이터의 손실에 대해 RefBoard는 책임지지 않습니다 (정기 백업 권장)',
+                'terms.sec6.li3': '제3자 서비스(Google Drive, Firebase)의 장애로 인한 문제는 해당 서비스 제공자의 책임입니다',
+                'terms.sec7.title': '7. 지적재산권',
+                'terms.sec7.li1': 'RefBoard의 소프트웨어 및 디자인에 대한 모든 권리는 RefBoard에 있습니다',
+                'terms.sec7.li2': '사용자는 소프트웨어를 리버스 엔지니어링, 수정, 재배포할 수 없습니다',
+                'terms.sec8.title': '8. 계정 해지',
+                'terms.sec8.li1': '사용자는 언제든지 계정을 삭제할 수 있습니다',
+                'terms.sec8.li2': '약관 위반 시 RefBoard는 사용자 계정을 정지하거나 삭제할 수 있습니다',
+                'terms.sec9.title': '9. 약관 변경',
+                'terms.sec9.desc': '본 약관은 필요에 따라 변경될 수 있으며, 변경 시 앱 내에서 공지합니다. 변경된 약관에 동의하지 않는 경우 서비스 사용을 중단해야 합니다.',
+                'terms.sec10.title': '10. 준거법 및 관할',
+                'terms.sec10.desc': '본 약관은 대한민국 법률에 따라 해석되며, 분쟁 발생 시 관할 법원은 대한민국 법원으로 합니다.',
+                'terms.sec11.title': '11. 문의',
+                'terms.sec11.desc': '약관 관련 문의사항이 있으시면 이메일로 연락 주세요.',
+                'footer.privacy': '개인정보처리방침',
+                'footer.terms': '이용약관',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            },
+            en: {
+                'terms.title': 'Terms of Service - RefBoard',
+                'nav.home': 'Home',
+                'nav.privacy': 'Privacy Policy',
+                'nav.terms': 'Terms of Service',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'terms.heading': 'Terms of Service',
+                'terms.updated': 'Last Updated: December 2024',
+                'terms.sec1.title': '1. Service Overview',
+                'terms.sec1.desc': 'RefBoard is a collaborative reference board application for creative work. These terms specify the conditions for using RefBoard.',
+                'terms.sec2.title': '2. Use of Service',
+                'terms.sec2.li1': 'RefBoard is provided free of charge.',
+                'terms.sec2.li2': 'Login via Google Account is required.',
+                'terms.sec2.li3': 'Users must use the service only for lawful purposes.',
+                'terms.sec3.title': '3. User Content',
+                'terms.sec3.li1': 'Users retain all rights to content they upload.',
+                'terms.sec3.li2': 'RefBoard does not use or store user content (stored in Google Drive).',
+                'terms.sec3.li3': 'Users must upload only content they have the right to use.',
+                'terms.sec4.title': '4. Prohibited Conduct',
+                'terms.sec4.desc': 'The following actions are prohibited:',
+                'terms.sec4.li1': 'Uploading or sharing illegal content.',
+                'terms.sec4.li2': 'Infringing on others\' copyrights.',
+                'terms.sec4.li3': 'Interfering with the normal operation of the service.',
+                'terms.sec4.li4': 'Unauthorized collection or use of others\' personal information.',
+                'terms.sec5.title': '5. Service Provision & Changes',
+                'terms.sec5.li1': 'RefBoard may change or discontinue the service without prior notice.',
+                'terms.sec5.li2': 'The service is provided "as is" and fitness for a particular purpose is not guaranteed.',
+                'terms.sec6.title': '6. Limitation of Liability',
+                'terms.sec6.li1': 'RefBoard is not liable for any direct or indirect damages resulting from the use of the service.',
+                'terms.sec6.li2': 'RefBoard is not responsible for loss of user data (regular backups are recommended).',
+                'terms.sec6.li3': 'RefBoard is not responsible for issues caused by third-party services (Google Drive, Firebase).',
+                'terms.sec7.title': '7. Intellectual Property',
+                'terms.sec7.li1': 'All rights to RefBoard\'s software and design belong to RefBoard.',
+                'terms.sec7.li2': 'Users may not reverse engineer, modify, or redistribute the software.',
+                'terms.sec8.title': '8. Account Termination',
+                'terms.sec8.li1': 'Users may delete their account at any time.',
+                'terms.sec8.li2': 'RefBoard may suspend or delete user accounts for violating these terms.',
+                'terms.sec9.title': '9. Changes to Terms',
+                'terms.sec9.desc': 'These terms may be modified as needed, and changes will be notified within the app. If you do not agree to the changes, you must stop using the service.',
+                'terms.sec10.title': '10. Governing Law',
+                'terms.sec10.desc': 'These terms are governed by the laws of the Republic of Korea, and the courts of the Republic of Korea shall have jurisdiction over any disputes.',
+                'terms.sec11.title': '11. Contact',
+                'terms.sec11.desc': 'For inquiries regarding these terms, please contact us via email.',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms of Service',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            }
+        };
+
+        // Get saved language or default to Korean
+        let currentLang = localStorage.getItem('language') || 'ko';
+
+        // Language switcher function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update language button active state
+            const langLabels = document.querySelectorAll('.lang-label');
+            langLabels.forEach((label, index) => {
+                if ((lang === 'ko' && index === 0) || (lang === 'en' && index === 1)) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage(currentLang);
+
+            // Language button click handler
+            document.getElementById('langBtn').addEventListener('click', () => {
+                const newLang = currentLang === 'ko' ? 'en' : 'ko';
+                switchLanguage(newLang);
+            });
+        });
+    </script>
 </body>
 
 </html>
