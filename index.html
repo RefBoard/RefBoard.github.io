@@ -88,9 +88,38 @@
 
                 </div>
 
-                <!-- App Screenshot -->
-                <div class="hero-image-placeholder">
-                    <img src="images/app-screenshot.png" alt="RefBoard 앱 스크린샷" />
+                <!-- App Screenshot Slider -->
+                <div class="hero-image-placeholder" style="position: relative; overflow: hidden;">
+                    <!-- Slider Container -->
+                    <div class="slider-container" style="display: flex; transition: transform 0.5s ease-in-out;">
+                        <img src="images/app-screenshot.png" alt="RefBoard 스크린샷 1" class="slider-image"
+                            style="min-width: 100%; height: 100%; object-fit: cover;" />
+                        <img src="images/app-screenshot_02.png" alt="RefBoard 스크린샷 2" class="slider-image"
+                            style="min-width: 100%; height: 100%; object-fit: cover;" />
+                        <img src="images/app-screenshot_03.png" alt="RefBoard 스크린샷 3" class="slider-image"
+                            style="min-width: 100%; height: 100%; object-fit: cover;" />
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <button class="slider-btn slider-btn-prev" onclick="moveSlide(-1)"
+                        style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.3s;">
+                        &#10094;
+                    </button>
+                    <button class="slider-btn slider-btn-next" onclick="moveSlide(1)"
+                        style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.3s;">
+                        &#10095;
+                    </button>
+
+                    <!-- Slide Indicators -->
+                    <div class="slider-indicators"
+                        style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10;">
+                        <span class="indicator active" onclick="goToSlide(0)"
+                            style="width: 12px; height: 12px; border-radius: 50%; background: white; cursor: pointer; transition: opacity 0.3s;"></span>
+                        <span class="indicator" onclick="goToSlide(1)"
+                            style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: opacity 0.3s;"></span>
+                        <span class="indicator" onclick="goToSlide(2)"
+                            style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: opacity 0.3s;"></span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -279,6 +308,53 @@
             document.getElementById('langBtn').addEventListener('click', () => {
                 const newLang = currentLang === 'ko' ? 'en' : 'ko';
                 switchLanguage(newLang);
+            });
+
+            // Image Slider
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slider-image');
+            const totalSlides = slides.length;
+            const sliderContainer = document.querySelector('.slider-container');
+            const indicators = document.querySelectorAll('.indicator');
+
+            function updateSlider() {
+                sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    if (index === currentSlide) {
+                        indicator.style.background = 'white';
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.style.background = 'rgba(255,255,255,0.5)';
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+
+            window.moveSlide = function (direction) {
+                currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+                updateSlider();
+            };
+
+            window.goToSlide = function (index) {
+                currentSlide = index;
+                updateSlider();
+            };
+
+            // Auto-play slider every 5 seconds
+            setInterval(() => {
+                moveSlide(1);
+            }, 5000);
+
+            // Hover effect for buttons
+            document.querySelectorAll('.slider-btn').forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    btn.style.background = 'rgba(0,0,0,0.8)';
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.background = 'rgba(0,0,0,0.5)';
+                });
             });
         });
     </script>
