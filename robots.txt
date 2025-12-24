@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap: https://trackk81.github.io/sitemap.xml
+# Google AdSense crawler
+User-agent: Mediapartners-Google
+Allow: /ads.txt
+
+# Sitemap: https://refboard.github.io/sitemap.xml
