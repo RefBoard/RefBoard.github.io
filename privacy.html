@@ -4,114 +4,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인정보처리방침 - RefBoard</title>
+    <title data-i18n="privacy.title">개인정보처리방침 - RefBoard</title>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Deep Link Auto-Launch Script -->
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const boardId = params.get('boardId');
+
+            if (boardId) {
+                const deepLink = 'refboard://?' + params.toString();
+                console.log('Attempting to open desktop app:', deepLink);
+                window.location.href = deepLink;
+            }
+        })();
+    </script>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <h1>RefBoard</h1>
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>RefBoard</span>
+            </a>
             <nav>
-                <a href="index.html">홈</a>
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="terms.html">이용약관</a>
+                <a href="index.html" data-i18n="nav.home">홈</a>
+                <a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a>
+                <a href="terms.html" data-i18n="nav.terms">이용약관</a>
+                <div class="language-switcher">
+                    <button id="langBtn" class="lang-btn" aria-label="Language">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="lang-label" data-i18n="lang.korean">한국어</span>
+                        <span class="lang-separator">/</span>
+                        <span class="lang-label" data-i18n="lang.english">English</span>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
 
-    <main class="document">
+    <main class="document-page">
         <div class="container">
-            <h2>개인정보처리방침</h2>
-            <p class="updated">최종 업데이트: 2024년 12월</p>
+            <h2 data-i18n="privacy.heading">개인정보처리방침</h2>
+            <div class="document-meta" data-i18n="privacy.updated">최종 업데이트: 2024년 12월</div>
 
-            <section>
-                <h3>1. 수집하는 정보</h3>
-                <p>RefBoard는 다음 정보를 수집합니다:</p>
-                <ul>
-                    <li><strong>Google 계정 정보</strong>: 이메일 주소, 이름, 프로필 사진</li>
-                    <li><strong>보드 데이터</strong>: 사용자가 생성한 보드 파일 (이미지, 텍스트, 레이아웃)</li>
-                    <li><strong>사용 데이터</strong>: 협업 세션 정보 (실시간 커서 위치, 사용자 활동)</li>
-                </ul>
-            </section>
+            <div class="document-content">
+                <section>
+                    <h3 data-i18n="privacy.sec1.title">1. 수집하는 정보</h3>
+                    <p data-i18n="privacy.sec1.desc">RefBoard는 다음 정보를 수집합니다:</p>
+                    <ul>
+                        <li data-i18n="privacy.sec1.li1"><strong>Google 계정 정보</strong>: 이메일 주소, 이름, 프로필 사진</li>
+                        <li data-i18n="privacy.sec1.li2"><strong>보드 데이터</strong>: 사용자가 생성한 보드 파일 (이미지, 텍스트, 레이아웃)</li>
+                        <li data-i18n="privacy.sec1.li3"><strong>사용 데이터</strong>: 협업 세션 정보 (실시간 커서 위치, 사용자 활동)</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>2. 정보 사용 목적</h3>
-                <p>수집된 정보는 다음 목적으로만 사용됩니다:</p>
-                <ul>
-                    <li>사용자 인증 및 계정 관리</li>
-                    <li>보드 저장 및 동기화 (Google Drive)</li>
-                    <li>실시간 협업 기능 제공</li>
-                    <li>공유 및 권한 관리</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="privacy.sec2.title">2. 정보 사용 목적</h3>
+                    <p data-i18n="privacy.sec2.desc">수집된 정보는 다음 목적으로만 사용됩니다:</p>
+                    <ul>
+                        <li data-i18n="privacy.sec2.li1">사용자 인증 및 계정 관리</li>
+                        <li data-i18n="privacy.sec2.li2">보드 저장 및 동기화 (Google Drive)</li>
+                        <li data-i18n="privacy.sec2.li3">실시간 협업 기능 제공</li>
+                        <li data-i18n="privacy.sec2.li4">공유 및 권한 관리</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>3. 정보 저장 및 보안</h3>
-                <ul>
-                    <li><strong>보드 데이터</strong>: 사용자의 Google Drive에 저장됩니다</li>
-                    <li><strong>협업 데이터</strong>: Firebase Realtime Database에 일시적으로 저장됩니다</li>
-                    <li><strong>인증 토큰</strong>: 로컬 기기에 암호화되어 저장됩니다</li>
-                </ul>
-                <p>RefBoard는 업계 표준 보안 방식을 사용하여 데이터를 보호합니다.</p>
-            </section>
+                <section>
+                    <h3 data-i18n="privacy.sec3.title">3. 정보 저장 및 보안</h3>
+                    <ul>
+                        <li data-i18n="privacy.sec3.li1"><strong>보드 데이터</strong>: 사용자의 Google Drive에 저장됩니다</li>
+                        <li data-i18n="privacy.sec3.li2"><strong>협업 데이터</strong>: Firebase Realtime Database에 일시적으로
+                            저장됩니다</li>
+                        <li data-i18n="privacy.sec3.li3"><strong>인증 토큰</strong>: 로컬 기기에 암호화되어 저장됩니다</li>
+                    </ul>
+                    <p data-i18n="privacy.sec3.desc">RefBoard는 업계 표준 보안 방식을 사용하여 데이터를 보호합니다.</p>
+                </section>
 
-            <section>
-                <h3>4. 제3자 공유</h3>
-                <p>RefBoard는 사용자 데이터를 제3자와 공유하지 않습니다. 단, 다음 서비스는 사용됩니다:</p>
-                <ul>
-                    <li><strong>Google Drive</strong>: 보드 파일 저장</li>
-                    <li><strong>Firebase</strong>: 실시간 협업 데이터 동기화</li>
-                </ul>
-                <p>이들 서비스는 각자의 개인정보처리방침을 따릅니다.</p>
-            </section>
+                <section>
+                    <h3 data-i18n="privacy.sec4.title">4. 제3자 공유</h3>
+                    <p data-i18n="privacy.sec4.desc">RefBoard는 사용자 데이터를 제3자와 공유하지 않습니다. 단, 다음 서비스는 사용됩니다:</p>
+                    <ul>
+                        <li data-i18n="privacy.sec4.li1"><strong>Google Drive</strong>: 보드 파일 저장</li>
+                        <li data-i18n="privacy.sec4.li2"><strong>Firebase</strong>: 실시간 협업 데이터 동기화</li>
+                    </ul>
+                    <p data-i18n="privacy.sec4.note">이들 서비스는 각자의 개인정보처리방침을 따릅니다.</p>
+                </section>
 
-            <section>
-                <h3>5. 사용자 권리</h3>
-                <p>사용자는 다음 권리를 가집니다:</p>
-                <ul>
-                    <li>언제든지 계정을 삭제할 수 있습니다</li>
-                    <li>Google Drive에서 보드 파일을 직접 삭제할 수 있습니다</li>
-                    <li>앱 권한을 언제든지 철회할 수 있습니다</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="privacy.sec5.title">5. 사용자 권리</h3>
+                    <p data-i18n="privacy.sec5.desc">사용자는 다음 권리를 가집니다:</p>
+                    <ul>
+                        <li data-i18n="privacy.sec5.li1">언제든지 계정을 삭제할 수 있습니다</li>
+                        <li data-i18n="privacy.sec5.li2">Google Drive에서 보드 파일을 직접 삭제할 수 있습니다</li>
+                        <li data-i18n="privacy.sec5.li3">앱 권한을 언제든지 철회할 수 있습니다</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>6. 쿠키 및 추적</h3>
-                <p>RefBoard는 다음을 사용하지 않습니다:</p>
-                <ul>
-                    <li>광고 추적</li>
-                    <li>분석 도구</li>
-                    <li>제3자 쿠키</li>
-                </ul>
-            </section>
+                <section>
+                    <h3 data-i18n="privacy.sec6.title">6. 쿠키 및 추적</h3>
+                    <p data-i18n="privacy.sec6.desc">RefBoard는 다음을 사용하지 않습니다:</p>
+                    <ul>
+                        <li data-i18n="privacy.sec6.li1">광고 추적</li>
+                        <li data-i18n="privacy.sec6.li2">분석 도구</li>
+                        <li data-i18n="privacy.sec6.li3">제3자 쿠키</li>
+                    </ul>
+                </section>
 
-            <section>
-                <h3>7. 아동 개인정보</h3>
-                <p>RefBoard는 13세 미만 아동의 정보를 의도적으로 수집하지 않습니다.</p>
-            </section>
+                <section>
+                    <h3 data-i18n="privacy.sec7.title">7. 아동 개인정보</h3>
+                    <p data-i18n="privacy.sec7.desc">RefBoard는 13세 미만 아동의 정보를 의도적으로 수집하지 않습니다.</p>
+                </section>
 
-            <section>
-                <h3>8. 변경 사항</h3>
-                <p>본 방침이 변경될 경우, 앱 내에서 공지하며 이 페이지를 업데이트합니다.</p>
-            </section>
+                <section>
+                    <h3 data-i18n="privacy.sec8.title">8. 변경 사항</h3>
+                    <p data-i18n="privacy.sec8.desc">본 방침이 변경될 경우, 앱 내에서 공지하며 이 페이지를 업데이트합니다.</p>
+                </section>
 
-            <section>
-                <h3>9. 문의</h3>
-                <p>개인정보 관련 문의사항이 있으시면 이메일로 연락 주세요.</p>
-            </section>
+                <section>
+                    <h3 data-i18n="privacy.sec9.title">9. 문의</h3>
+                    <p data-i18n="privacy.sec9.desc">개인정보 관련 문의사항이 있으시면 이메일로 연락 주세요.</p>
+                </section>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 RefBoard. All rights reserved.</p>
-            <p>
-                <a href="privacy.html">개인정보처리방침</a> |
-                <a href="terms.html">이용약관</a>
-            </p>
+            <div class="footer-links" style="margin-bottom: 1rem;">
+                <a href="privacy.html" class="footer-link" data-i18n="footer.privacy">개인정보처리방침</a>
+                <a href="terms.html" class="footer-link" data-i18n="footer.terms">이용약관</a>
+            </div>
+            <p class="copyright" data-i18n="footer.copyright">&copy; 2024 RefBoard Team. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Language translations
+        const translations = {
+            ko: {
+                'privacy.title': '개인정보처리방침 - RefBoard',
+                'nav.home': '홈',
+                'nav.privacy': '개인정보처리방침',
+                'nav.terms': '이용약관',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'privacy.heading': '개인정보처리방침',
+                'privacy.updated': '최종 업데이트: 2024년 12월',
+                'privacy.sec1.title': '1. 수집하는 정보',
+                'privacy.sec1.desc': 'RefBoard는 다음 정보를 수집합니다:',
+                'privacy.sec1.li1': '<strong>Google 계정 정보</strong>: 이메일 주소, 이름, 프로필 사진',
+                'privacy.sec1.li2': '<strong>보드 데이터</strong>: 사용자가 생성한 보드 파일 (이미지, 텍스트, 레이아웃)',
+                'privacy.sec1.li3': '<strong>사용 데이터</strong>: 협업 세션 정보 (실시간 커서 위치, 사용자 활동)',
+                'privacy.sec2.title': '2. 정보 사용 목적',
+                'privacy.sec2.desc': '수집된 정보는 다음 목적으로만 사용됩니다:',
+                'privacy.sec2.li1': '사용자 인증 및 계정 관리',
+                'privacy.sec2.li2': '보드 저장 및 동기화 (Google Drive)',
+                'privacy.sec2.li3': '실시간 협업 기능 제공',
+                'privacy.sec2.li4': '공유 및 권한 관리',
+                'privacy.sec3.title': '3. 정보 저장 및 보안',
+                'privacy.sec3.li1': '<strong>보드 데이터</strong>: 사용자의 Google Drive에 저장됩니다',
+                'privacy.sec3.li2': '<strong>협업 데이터</strong>: Firebase Realtime Database에 일시적으로 저장됩니다',
+                'privacy.sec3.li3': '<strong>인증 토큰</strong>: 로컬 기기에 암호화되어 저장됩니다',
+                'privacy.sec3.desc': 'RefBoard는 업계 표준 보안 방식을 사용하여 데이터를 보호합니다.',
+                'privacy.sec4.title': '4. 제3자 공유',
+                'privacy.sec4.desc': 'RefBoard는 사용자 데이터를 제3자와 공유하지 않습니다. 단, 다음 서비스는 사용됩니다:',
+                'privacy.sec4.li1': '<strong>Google Drive</strong>: 보드 파일 저장',
+                'privacy.sec4.li2': '<strong>Firebase</strong>: 실시간 협업 데이터 동기화',
+                'privacy.sec4.note': '이들 서비스는 각자의 개인정보처리방침을 따릅니다.',
+                'privacy.sec5.title': '5. 사용자 권리',
+                'privacy.sec5.desc': '사용자는 다음 권리를 가집니다:',
+                'privacy.sec5.li1': '언제든지 계정을 삭제할 수 있습니다',
+                'privacy.sec5.li2': 'Google Drive에서 보드 파일을 직접 삭제할 수 있습니다',
+                'privacy.sec5.li3': '앱 권한을 언제든지 철회할 수 있습니다',
+                'privacy.sec6.title': '6. 쿠키 및 추적',
+                'privacy.sec6.desc': 'RefBoard는 다음을 사용하지 않습니다:',
+                'privacy.sec6.li1': '광고 추적',
+                'privacy.sec6.li2': '분석 도구',
+                'privacy.sec6.li3': '제3자 쿠키',
+                'privacy.sec7.title': '7. 아동 개인정보',
+                'privacy.sec7.desc': 'RefBoard는 13세 미만 아동의 정보를 의도적으로 수집하지 않습니다.',
+                'privacy.sec8.title': '8. 변경 사항',
+                'privacy.sec8.desc': '본 방침이 변경될 경우, 앱 내에서 공지하며 이 페이지를 업데이트합니다.',
+                'privacy.sec9.title': '9. 문의',
+                'privacy.sec9.desc': '개인정보 관련 문의사항이 있으시면 이메일로 연락 주세요.',
+                'footer.privacy': '개인정보처리방침',
+                'footer.terms': '이용약관',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            },
+            en: {
+                'privacy.title': 'Privacy Policy - RefBoard',
+                'nav.home': 'Home',
+                'nav.privacy': 'Privacy Policy',
+                'nav.terms': 'Terms of Service',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'privacy.heading': 'Privacy Policy',
+                'privacy.updated': 'Last Updated: December 2024',
+                'privacy.sec1.title': '1. Information We Collect',
+                'privacy.sec1.desc': 'RefBoard collects the following information:',
+                'privacy.sec1.li1': '<strong>Google Account Info</strong>: Email address, Name, Profile Picture',
+                'privacy.sec1.li2': '<strong>Board Data</strong>: User-created board files (Images, Text, Layouts)',
+                'privacy.sec1.li3': '<strong>Usage Data</strong>: Collaboration session info (Real-time cursor, Activity)',
+                'privacy.sec2.title': '2. How We Use Information',
+                'privacy.sec2.desc': 'Collected information is used only for:',
+                'privacy.sec2.li1': 'User Authentication & Account Management',
+                'privacy.sec2.li2': 'Board Storage & Sync (Google Drive)',
+                'privacy.sec2.li3': 'Providing Real-time Collaboration',
+                'privacy.sec2.li4': 'Sharing & Permission Management',
+                'privacy.sec3.title': '3. Storage & Security',
+                'privacy.sec3.li1': '<strong>Board Data</strong>: Stored in your Google Drive',
+                'privacy.sec3.li2': '<strong>Collaboration Data</strong>: Temporarily stored in Firebase Realtime Database',
+                'privacy.sec3.li3': '<strong>Auth Tokens</strong>: Stored encrypted on your local device',
+                'privacy.sec3.desc': 'RefBoard uses industry-standard security practices to protect data.',
+                'privacy.sec4.title': '4. Third-Party Sharing',
+                'privacy.sec4.desc': 'RefBoard does not share data with third parties, except for essential services:',
+                'privacy.sec4.li1': '<strong>Google Drive</strong>: File Storage',
+                'privacy.sec4.li2': '<strong>Firebase</strong>: Real-time Data Sync',
+                'privacy.sec4.note': 'These services follow their own privacy policies.',
+                'privacy.sec5.title': '5. User Rights',
+                'privacy.sec5.desc': 'Users have the right to:',
+                'privacy.sec5.li1': 'Delete their account at any time',
+                'privacy.sec5.li2': 'Delete board files directly from Google Drive',
+                'privacy.sec5.li3': 'Revoke app permissions at any time',
+                'privacy.sec6.title': '6. Cookies & Tracking',
+                'privacy.sec6.desc': 'RefBoard does NOT use:',
+                'privacy.sec6.li1': 'Ad Tracking',
+                'privacy.sec6.li2': 'Analytics Tools',
+                'privacy.sec6.li3': 'Third-party Cookies',
+                'privacy.sec7.title': '7. Children\'s Privacy',
+                'privacy.sec7.desc': 'RefBoard does not knowingly collect information from children under 13.',
+                'privacy.sec8.title': '8. Changes',
+                'privacy.sec8.desc': 'Changes to this policy will be notified within the app and this page updated.',
+                'privacy.sec9.title': '9. Contact',
+                'privacy.sec9.desc': 'For privacy-related inquiries, please contact us via email.',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms of Service',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            }
+        };
+
+        // Get saved language or default to Korean
+        let currentLang = localStorage.getItem('language') || 'ko';
+
+        // Language switcher function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update language button active state
+            const langLabels = document.querySelectorAll('.lang-label');
+            langLabels.forEach((label, index) => {
+                if ((lang === 'ko' && index === 0) || (lang === 'en' && index === 1)) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage(currentLang);
+
+            // Language button click handler
+            document.getElementById('langBtn').addEventListener('click', () => {
+                const newLang = currentLang === 'ko' ? 'en' : 'ko';
+                switchLanguage(newLang);
+            });
+        });
+    </script>
 </body>
 
 </html>
