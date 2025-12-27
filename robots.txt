@@ -5,4 +5,4 @@ Allow: /
 User-agent: Mediapartners-Google
 Allow: /ads.txt
 
-# Sitemap: https://refboard.github.io/sitemap.xml
+Sitemap: https://www.refboard.org/sitemap.xml
