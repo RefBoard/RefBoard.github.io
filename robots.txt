@@ -3,6 +3,6 @@ Allow: /
 
 # Google AdSense crawler
 User-agent: Mediapartners-Google
-Allow: /ads.txt
+Allow: /
 
 Sitemap: https://www.refboard.org/sitemap.xml

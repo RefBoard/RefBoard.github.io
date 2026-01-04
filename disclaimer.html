@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title">면책공고 - RefBoard</title>
+    <meta name="description" content="RefBoard의 면책공고 및 책임의 한계에 대한 안내입니다.">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>RefBoard</span>
+            </a>
+            <nav>
+                <a href="index.html" data-i18n="nav.home">홈</a>
+                <a href="guide.html" data-i18n="nav.guide">가이드</a>
+                <a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a>
+                <a href="terms.html" data-i18n="nav.terms">이용약관</a>
+                <a href="disclaimer.html" class="active" data-i18n="nav.disclaimer">면책공고</a>
+                <div class="language-switcher">
+                    <button id="langBtn" class="lang-btn" aria-label="Language">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="lang-label" data-i18n="lang.korean">한국어</span>
+                        <span class="lang-separator">/</span>
+                        <span class="lang-label" data-i18n="lang.english">English</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="document-page">
+        <div class="container">
+            <h2 data-i18n="disc.heading">면책공고 (Disclaimer)</h2>
+            <div class="document-meta" data-i18n="disc.updated">최종 업데이트: 2024년 12월</div>
+
+            <div class="document-content">
+                <section>
+                    <h3 data-i18n="disc.sec1.title">1. 일반 면책 조항</h3>
+                    <p data-i18n="disc.sec1.desc">
+                        RefBoard(이하 "서비스")는 사용자에게 편의를 제공하기 위해 제작된 소프트웨어입니다.
+                        본 서비스는 "있는 그대로(As-Is)" 제공되며, 명시적이든 묵시적이든 어떠한 형태의 보증도 제공하지 않습니다.
+                        개발팀은 서비스의 무결성, 적합성, 신뢰성, 가용성, 정확성에 대해 보장하지 않습니다.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 data-i18n="disc.sec2.title">2. 책임의 한계</h3>
+                    <p data-i18n="disc.sec2.desc">
+                        RefBoard 개발팀은 사용자가 본 서비스를 사용하거나 사용할 수 없음으로 인해 발생하는
+                        직접적, 간접적, 부수적, 징벌적, 파생적 손해에 대해 어떠한 법적 책임도 지지 않습니다.
+                        여기에는 데이터 손실, 업무 중단, 컴퓨터 오작동 등이 포함되나 이에 국한되지 않습니다.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 data-i18n="disc.sec3.title">3. 외부 링크 및 서비스</h3>
+                    <p data-i18n="disc.sec3.desc">
+                        본 서비스는 Google Drive, Firebase 등 외부 제3자 서비스와 연동될 수 있습니다.
+                        RefBoard는 이러한 외부 서비스의 가용성, 내용, 정책에 대해 통제권이 없으며,
+                        이에 대해 어떠한 책임도 지지 않습니다. 외부 서비스의 사용은 전적으로 사용자의 책임입니다.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 data-i18n="disc.sec4.title">4. 계정 및 데이터 관리</h3>
+                    <p data-i18n="disc.sec4.desc">
+                        사용자 데이터(보드 파일 등)는 사용자의 개인 Google Drive에 저장되므로,
+                        해당 데이터의 관리, 백업, 보안 책임은 전적으로 사용자 본인에게 있습니다.
+                        RefBoard는 사용자의 부주의로 인한 데이터 손실이나 유출에 대해 책임지지 않습니다.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 data-i18n="disc.sec5.title">5. 업데이트 및 변경</h3>
+                    <p data-i18n="disc.sec5.desc">
+                        본 면책공고는 예고 없이 언제든지 수정될 수 있으며, 변경된 내용은 본 페이지에 게시되는 즉시 효력을 발생합니다.
+                        서비스를 계속 사용하는 것은 변경된 내용에 동의하는 것으로 간주됩니다.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links" style="margin-bottom: 1rem;">
+                <a href="privacy.html" class="footer-link" data-i18n="footer.privacy">개인정보처리방침</a>
+                <a href="terms.html" class="footer-link" data-i18n="footer.terms">이용약관</a>
+                <a href="disclaimer.html" class="footer-link" data-i18n="footer.disclaimer">면책공고</a>
+                <a href="contact.html" class="footer-link" data-i18n="footer.contact">문의하기</a>
+            </div>
+            <p class="copyright" data-i18n="footer.copyright">&copy; 2024 RefBoard Team. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                <span data-i18n="footer.contactLabel">문의:</span>
+                <a href="mailto:trackk81@gmail.com"
+                    style="color: #60a5fa; text-decoration: none;">trackk81@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            ko: {
+                'meta.title': '면책공고 - RefBoard',
+                'nav.home': '홈',
+                'nav.guide': '가이드',
+                'nav.privacy': '개인정보처리방침',
+                'nav.terms': '이용약관',
+                'nav.disclaimer': '면책공고',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'disc.heading': '면책공고 (Disclaimer)',
+                'disc.updated': '최종 업데이트: 2024년 12월',
+                'disc.sec1.title': '1. 일반 면책 조항',
+                'disc.sec1.desc': 'RefBoard(이하 "서비스")는 사용자에게 편의를 제공하기 위해 제작된 소프트웨어입니다. 본 서비스는 "있는 그대로(As-Is)" 제공되며, 명시적이든 묵시적이든 어떠한 형태의 보증도 제공하지 않습니다. 개발팀은 서비스의 무결성, 적합성, 신뢰성, 가용성, 정확성에 대해 보장하지 않습니다.',
+                'disc.sec2.title': '2. 책임의 한계',
+                'disc.sec2.desc': 'RefBoard 개발팀은 사용자가 본 서비스를 사용하거나 사용할 수 없음으로 인해 발생하는 직접적, 간접적, 부수적, 징벌적, 파생적 손해에 대해 어떠한 법적 책임도 지지 않습니다. 여기에는 데이터 손실, 업무 중단, 컴퓨터 오작동 등이 포함되나 이에 국한되지 않습니다.',
+                'disc.sec3.title': '3. 외부 링크 및 서비스',
+                'disc.sec3.desc': '본 서비스는 Google Drive, Firebase 등 외부 제3자 서비스와 연동될 수 있습니다. RefBoard는 이러한 외부 서비스의 가용성, 내용, 정책에 대해 통제권이 없으며, 이에 대해 어떠한 책임도 지지 않습니다. 외부 서비스의 사용은 전적으로 사용자의 책임입니다.',
+                'disc.sec4.title': '4. 계정 및 데이터 관리',
+                'disc.sec4.desc': '사용자 데이터(보드 파일 등)는 사용자의 개인 Google Drive에 저장되므로, 해당 데이터의 관리, 백업, 보안 책임은 전적으로 사용자 본인에게 있습니다. RefBoard는 사용자의 부주의로 인한 데이터 손실이나 유출에 대해 책임지지 않습니다.',
+                'disc.sec5.title': '5. 업데이트 및 변경',
+                'disc.sec5.desc': '본 면책공고는 예고 없이 언제든지 수정될 수 있으며, 변경된 내용은 본 페이지에 게시되는 즉시 효력을 발생합니다. 서비스를 계속 사용하는 것은 변경된 내용에 동의하는 것으로 간주됩니다.',
+                'footer.privacy': '개인정보처리방침',
+                'footer.terms': '이용약관',
+                'footer.contact': '문의하기',
+                'footer.disclaimer': '면책공고',
+                'footer.contactLabel': '문의:',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            },
+            en: {
+                'meta.title': 'Disclaimer - RefBoard',
+                'nav.home': 'Home',
+                'nav.guide': 'Guide',
+                'nav.privacy': 'Privacy Policy',
+                'nav.terms': 'Terms of Service',
+                'nav.disclaimer': 'Disclaimer',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'disc.heading': 'Disclaimer',
+                'disc.updated': 'Last Updated: December 2024',
+                'disc.sec1.title': '1. General Disclaimer',
+                'disc.sec1.desc': 'RefBoard ("the Service") is software provided for user convenience. The Service is provided "AS IS", without warranty of any kind, express or implied. The development team makes no guarantees regarding the integrity, fitness for a particular purpose, reliability, availability, or accuracy of the Service.',
+                'disc.sec2.title': '2. Limitation of Liability',
+                'disc.sec2.desc': 'In no event shall the RefBoard development team be liable for any direct, indirect, incidental, special, exemplary, or consequential damages arising out of the use or inability to use the Service. This includes, but is not limited to, loss of data, business interruption, or computer malfunction.',
+                'disc.sec3.title': '3. External Links & Services',
+                'disc.sec3.desc': 'The Service may integrate with third-party services such as Google Drive and Firebase. RefBoard has no control over, and assumes no responsibility for, the availability, content, or policies of these external services. Use of external services is entirely at your own risk.',
+                'disc.sec4.title': '4. Account & Data Management',
+                'disc.sec4.desc': 'Since user data (such as board files) is stored in the user\'s personal Google Drive, the responsibility for managing, backing up, and securing that data lies entirely with the user. RefBoard is not responsible for any data loss or leakage caused by user negligence.',
+                'disc.sec5.title': '5. Updates & Changes',
+                'disc.sec5.desc': 'This Disclaimer is subject to change at any time without notice, and such changes will be effective immediately upon posting on this page. Continued use of the Service constitutes your acceptance of the modified Disclaimer.',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms of Service',
+                'footer.contact': 'Contact',
+                'footer.disclaimer': 'Disclaimer',
+                'footer.contactLabel': 'Contact:',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            }
+        };
+
+        // Get saved language or default to Korean
+        let currentLang = localStorage.getItem('language') || 'ko';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else if (element.tagName === 'TITLE') {
+                        document.title = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update language button active state
+            const langLabels = document.querySelectorAll('.lang-label');
+            langLabels.forEach((label, index) => {
+                if ((lang === 'ko' && index === 0) || (lang === 'en' && index === 1)) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage(currentLang);
+            document.getElementById('langBtn').addEventListener('click', () => {
+                const newLang = currentLang === 'ko' ? 'en' : 'ko';
+                switchLanguage(newLang);
+            });
+        });
+    </script>
+</body>
+
+</html>
