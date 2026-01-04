@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RefBoard 사용자 가이드 - 시작하기 및 팁</title>
+    <title data-i18n="meta.title">RefBoard 사용자 가이드 - 시작하기 및 팁</title>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3835772846253175"
@@ -391,6 +391,8 @@
                 if (translations[lang] && translations[lang][key]) {
                     if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                         element.value = translations[lang][key];
+                    } else if (element.tagName === 'TITLE') {
+                        document.title = translations[lang][key];
                     } else {
                         element.innerHTML = translations[lang][key];
                     }
