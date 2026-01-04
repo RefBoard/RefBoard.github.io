@@ -102,61 +102,73 @@
                 <span>RefBoard</span>
             </a>
             <nav>
-                <a href="index.html">홈</a>
-                <a href="guide.html" class="active">가이드</a>
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="index.html#download">다운로드</a>
+                <a href="index.html" data-i18n="nav.home">홈</a>
+                <a href="guide.html" class="active" data-i18n="nav.guide">가이드</a>
+                <a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a>
+                <a href="terms.html" data-i18n="nav.terms">이용약관</a>
+                <a href="contact.html" data-i18n="nav.contact">문의하기</a>
+                <div class="language-switcher">
+                    <button id="langBtn" class="lang-btn" aria-label="Language">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="lang-label" data-i18n="lang.korean">한국어</span>
+                        <span class="lang-separator">/</span>
+                        <span class="lang-label" data-i18n="lang.english">English</span>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
 
     <main>
         <div class="guide-container">
-            <h1 class="guide-title">RefBoard 사용자 가이드</h1>
-            <p class="guide-text">
+            <h1 class="guide-title" data-i18n="guide.title">RefBoard 사용자 가이드</h1>
+            <p class="guide-text" data-i18n="guide.intro">
                 RefBoard를 200% 활용하는 방법을 상세히 안내해 드립니다.
                 이 가이드를 통해 기본적인 사용법부터 고급 기능까지 마스터하여 창작 프로세스를 혁신하세요.
             </p>
 
             <!-- Section 1: Introduction -->
             <div class="guide-section">
-                <h2 class="section-title">✨ 시작하기</h2>
-                <p class="guide-text">
+                <h2 class="section-title" data-i18n="sec1.title">✨ 시작하기</h2>
+                <p class="guide-text" data-i18n="sec1.desc1">
                     RefBoard는 단순한 이미지 뷰어가 아닙니다. 무한한 캔버스 공간에서 수천 장의 레퍼런스를 정리하고,
                     팀원과 실시간으로 아이디어를 발전시키는 통합 비주얼 워크스페이스입니다.
                 </p>
                 <p class="guide-text">
-                    <strong>설치 및 실행:</strong><br>
-                    Windows 사용자는 [다운로드] 버튼을 통해 설치 파일을 받으실 수 있습니다.
-                    설치 후 Google 계정으로 로그인하면 즉시 Google Drive와 연동되어 클라우드 저장이 활성화됩니다.
+                    <strong data-i18n="sec1.desc2.strong">설치 및 실행:</strong><br>
+                    <span data-i18n="sec1.desc2.text">Windows 사용자는 [다운로드] 버튼을 통해 설치 파일을 받으실 수 있습니다.
+                        설치 후 Google 계정으로 로그인하면 즉시 Google Drive와 연동되어 클라우드 저장이 활성화됩니다.</span>
                 </p>
             </div>
 
             <!-- Section 2: Core Features -->
             <div class="guide-section">
-                <h2 class="section-title">🚀 주요 기능 마스터하기</h2>
+                <h2 class="section-title" data-i18n="sec2.title">🚀 주요 기능 마스터하기</h2>
 
-                <h3 style="color:#60a5fa; margin-bottom:1rem;">1. 무한 캔버스 활용</h3>
-                <p class="guide-text">
+                <h3 style="color:#60a5fa; margin-bottom:1rem;" data-i18n="sec2.sub1.title">1. 무한 캔버스 활용</h3>
+                <p class="guide-text" data-i18n="sec2.sub1.desc">
                     RefBoard의 캔버스는 크기 제한이 없습니다. 화면의 빈 공간을 드래그하여(Pan) 자유롭게 이동하고,
-                    마우스 휠(또는 <span class="shortcut-key">Ctrl</span> + 휠)로 부드럽게 줌인/줌아웃 할 수 있습니다.
+                    마우스 휠(또는 Ctrl + 휠)로 부드럽게 줌인/줌아웃 할 수 있습니다.
                     프로젝트의 규모가 아무리 커져도 하나의 보드에 모든 자료를 담을 수 있습니다.
                 </p>
 
-                <h3 style="color:#60a5fa; margin-bottom:1rem; margin-top:2rem;">2. 미디어 가져오기 (Drag & Drop)</h3>
-                <p class="guide-text">
+                <h3 style="color:#60a5fa; margin-bottom:1rem; margin-top:2rem;" data-i18n="sec2.sub2.title">2. 미디어 가져오기
+                    (Drag & Drop)</h3>
+                <p class="guide-text" data-i18n="sec2.sub2.desc">
                     가장 빠르고 강력한 기능입니다. 바탕화면의 이미지 파일이나 폴더,
                     또는 웹 브라우저의 이미지를 RefBoard 창으로 <strong>드래그 앤 드롭</strong>하세요.
                 </p>
                 <ul class="guide-list">
-                    <li><strong>이미지(JPG, PNG, GIF, WEBP):</strong> 즉시 로드되어 캔버스에 배치됩니다.</li>
-                    <li><strong>비디오(MP4):</strong> 자동 재생/루프 설정이 가능한 플레이어로 삽입됩니다.</li>
-                    <li><strong>PSD 파일:</strong> Photoshop 없이도 레이어 미리보기가 가능한 고화질 이미지로 변환되어 표시됩니다.</li>
+                    <li data-i18n="sec2.sub2.li1"><strong>이미지(JPG, PNG, GIF, WEBP):</strong> 즉시 로드되어 캔버스에 배치됩니다.</li>
+                    <li data-i18n="sec2.sub2.li2"><strong>비디오(MP4):</strong> 자동 재생/루프 설정이 가능한 플레이어로 삽입됩니다.</li>
+                    <li data-i18n="sec2.sub2.li3"><strong>PSD 파일:</strong> Photoshop 없이도 레이어 미리보기가 가능한 고화질 이미지로 변환되어
+                        표시됩니다.</li>
                 </ul>
 
-                <h3 style="color:#60a5fa; margin-bottom:1rem; margin-top:2rem;">3. 스마트 그룹 & 정렬</h3>
-                <p class="guide-text">
-                    흩어진 이미지를 선택하고 <span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">G</span>를 누르면
+                <h3 style="color:#60a5fa; margin-bottom:1rem; margin-top:2rem;" data-i18n="sec2.sub3.title">3. 스마트 그룹 &
+                    정렬</h3>
+                <p class="guide-text" data-i18n="sec2.sub3.desc">
+                    흩어진 이미지를 선택하고 Ctrl + G를 누르면
                     그룹이 생성됩니다. 그룹 내에서 이미지들은 자동으로 격자(Grid) 형태로 정렬되며,
                     그룹 제목을 더블 클릭하여 이름을 변경할 수 있습니다 ("캐릭터 시안", "배경 레퍼런스" 등).
                 </p>
@@ -164,12 +176,12 @@
 
             <!-- Section 3: AI Features -->
             <div class="guide-section">
-                <h2 class="section-title">🎨 AI 이미지 생성 (Gemini Pro)</h2>
-                <p class="guide-text">
+                <h2 class="section-title" data-i18n="sec3.title">🎨 AI 이미지 생성 (Gemini Pro)</h2>
+                <p class="guide-text" data-i18n="sec3.desc1">
                     아이디어가 막혔을 때, RefBoard에 내장된 Gemini Pro AI를 활용하세요.
                     우클릭 메뉴에서 <strong>"AI 이미지 생성"</strong>을 선택하거나 도구 모음의 AI 아이콘을 클릭합니다.
                 </p>
-                <p class="guide-text">
+                <p class="guide-text" data-i18n="sec3.desc2">
                     프롬프트를 입력하면 고화질의 레퍼런스 이미지가 생성되어 즉시 캔버스에 추가됩니다.
                     별도의 브라우저를 열 필요 없이, 작업 흐름을 끊지 않고 영감을 얻을 수 있습니다.
                 </p>
@@ -177,41 +189,44 @@
 
             <!-- Section 4: Collaboration -->
             <div class="guide-section">
-                <h2 class="section-title">🤝 실시간 협업 가이드</h2>
-                <p class="guide-text">
+                <h2 class="section-title" data-i18n="sec4.title">🤝 실시간 협업 가이드</h2>
+                <p class="guide-text" data-i18n="sec4.desc">
                     원격 근무 시대의 필수 기능입니다. 보드 우측 상단의 <strong>[공유]</strong> 버튼을 눌러 팀원을 초대하세요.
                 </p>
                 <ul class="guide-list">
-                    <li><strong>실시간 커서:</strong> 상대방이 보고 있는 위치와 마우스 움직임이 이름표와 함께 실시간으로 표시됩니다.</li>
-                    <li><strong>동시 편집:</strong> 누군가 이미지를 옮기거나 크기를 조절하면, 모든 팀원의 화면에 즉시 반영됩니다.</li>
-                    <li><strong>드로잉 피드백:</strong> 펜 도구(<span class="shortcut-key">P</span>)를 사용하여 이미지 위에 직접 수정 사항을 그리거나
-                        메모를 남기세요.</li>
+                    <li data-i18n="sec4.li1"><strong>실시간 커서:</strong> 상대방이 보고 있는 위치와 마우스 움직임이 이름표와 함께 실시간으로 표시됩니다.</li>
+                    <li data-i18n="sec4.li2"><strong>동시 편집:</strong> 누군가 이미지를 옮기거나 크기를 조절하면, 모든 팀원의 화면에 즉시 반영됩니다.</li>
+                    <li data-i18n="sec4.li3"><strong>드로잉 피드백:</strong> 펜 도구(P)를 사용하여 이미지 위에 직접 수정 사항을 그리거나 메모를 남기세요.
+                    </li>
                 </ul>
             </div>
 
             <!-- Section 5: Shortcuts -->
             <div class="guide-section">
-                <h2 class="section-title">⌨️ 필수 단축키 모음</h2>
+                <h2 class="section-title" data-i18n="sec5.title">⌨️ 필수 단축키 모음</h2>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                     <div>
                         <ul class="guide-list">
-                            <li><span class="shortcut-key">Space</span> + 드래그 : 화면 이동 (Pan)</li>
-                            <li><span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">Z</span> : 실행 취소
+                            <li><span class="shortcut-key">Space</span> + <span data-i18n="sec5.li1">드래그 : 화면 이동
+                                    (Pan)</span></li>
+                            <li><span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">Z</span> : <span
+                                    data-i18n="sec5.li2">실행 취소</span></li>
+                            <li><span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">Y</span> : <span
+                                    data-i18n="sec5.li3">다시 실행</span></li>
+                            <li><span class="shortcut-key">Del</span> : <span data-i18n="sec5.li4">선택한 아이템 삭제</span>
                             </li>
-                            <li><span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">Y</span> : 다시 실행
-                            </li>
-                            <li><span class="shortcut-key">Del</span> : 선택한 아이템 삭제</li>
                         </ul>
                     </div>
                     <div>
                         <ul class="guide-list">
                             <li><span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">C</span> / <span
-                                    class="shortcut-key">V</span> : 복사 / 붙여넣기</li>
-                            <li><span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">G</span> : 그룹 만들기
-                            </li>
+                                    class="shortcut-key">V</span> : <span data-i18n="sec5.li5">복사 / 붙여넣기</span></li>
+                            <li><span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">G</span> : <span
+                                    data-i18n="sec5.li6">그룹 만들기</span></li>
                             <li><span class="shortcut-key">Ctrl</span> + <span class="shortcut-key">Shift</span> + <span
-                                    class="shortcut-key">G</span> : 그룹 해제</li>
-                            <li><span class="shortcut-key">Alt</span> + 드래그 : 아이템 복제 이동</li>
+                                    class="shortcut-key">G</span> : <span data-i18n="sec5.li7">그룹 해제</span></li>
+                            <li><span class="shortcut-key">Alt</span> + <span data-i18n="sec5.li8">드래그 : 아이템 복제
+                                    이동</span></li>
                         </ul>
                     </div>
                 </div>
@@ -219,16 +234,21 @@
 
             <!-- FAQ Section for SEO -->
             <div class="guide-section">
-                <h2 class="section-title">❓ 자주 묻는 질문 (FAQ)</h2>
-                <p class="guide-text"><strong>Q. RefBoard는 무료인가요?</strong><br>
-                    A. 네, 현재 모든 핵심 기능은 무료로 제공됩니다. 개인 사용자와 소규모 팀은 비용 부담 없이 무제한으로 보드를 생성할 수 있습니다.</p>
+                <h2 class="section-title" data-i18n="sec6.title">❓ 자주 묻는 질문 (FAQ)</h2>
+                <p class="guide-text"><strong data-i18n="sec6.q1">Q. RefBoard는 무료인가요?</strong><br>
+                    <span data-i18n="sec6.a1">A. 네, 현재 모든 핵심 기능은 무료로 제공됩니다. 개인 사용자와 소규모 팀은 비용 부담 없이 무제한으로 보드를 생성할 수
+                        있습니다.</span>
+                </p>
 
-                <p class="guide-text"><strong>Q. 데이터는 어디에 저장되나요?</strong><br>
-                    A. 모든 데이터는 사용자의 Google Drive에 저장되므로 보안이 강력하며, 저희 서버에는 파일을 저장하지 않아 프라이버시가 완벽하게 보호됩니다.</p>
+                <p class="guide-text"><strong data-i18n="sec6.q2">Q. 데이터는 어디에 저장되나요?</strong><br>
+                    <span data-i18n="sec6.a2">A. 모든 데이터는 사용자의 Google Drive에 저장되므로 보안이 강력하며, 저희 서버에는 파일을 저장하지 않아 프라이버시가
+                        완벽하게 보호됩니다.</span>
+                </p>
 
-                <p class="guide-text"><strong>Q. Google 계정이 꼭 필요한가요?</strong><br>
-                    A. 네, RefBoard는 Google Drive를 저장소로 사용하기 때문에 Google 계정 로그인이 필요합니다. 덕분에 별도의 회원가입 없이 기존 계정으로 바로 시작할 수
-                    있습니다.</p>
+                <p class="guide-text"><strong data-i18n="sec6.q3">Q. Google 계정이 꼭 필요한가요?</strong><br>
+                    <span data-i18n="sec6.a3">A. 네, RefBoard는 Google Drive를 저장소로 사용하기 때문에 Google 계정 로그인이 필요합니다. 덕분에 별도의
+                        회원가입 없이 기존 계정으로 바로 시작할 수 있습니다.</span>
+                </p>
             </div>
 
         </div>
@@ -237,15 +257,168 @@
     <footer>
         <div class="container">
             <div class="footer-links" style="margin-bottom: 1rem;">
-                <a href="index.html" class="footer-link">홈</a>
-                <a href="guide.html" class="footer-link">가이드</a>
-                <a href="privacy.html" class="footer-link">개인정보처리방침</a>
-                <a href="terms.html" class="footer-link">이용약관</a>
-                <a href="contact.html" class="footer-link">문의하기</a>
+                <a href="privacy.html" class="footer-link" data-i18n="nav.privacy">개인정보처리방침</a>
+                <a href="terms.html" class="footer-link" data-i18n="nav.terms">이용약관</a>
+                <a href="contact.html" class="footer-link" data-i18n="nav.contact">문의하기</a>
             </div>
-            <p class="copyright">&copy; 2024 RefBoard Team. All rights reserved.</p>
+            <p class="copyright" data-i18n="footer.copyright">&copy; 2024 RefBoard Team. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                <span data-i18n="footer.contactLabel">문의:</span>
+                <a href="mailto:trackk81@gmail.com"
+                    style="color: #60a5fa; text-decoration: none;">trackk81@gmail.com</a>
+            </p>
         </div>
     </footer>
+
+    <script>
+        // Language translations
+        const translations = {
+            ko: {
+                'nav.home': '홈',
+                'nav.guide': '가이드',
+                'nav.privacy': '개인정보처리방침',
+                'nav.terms': '이용약관',
+                'nav.contact': '문의하기',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'guide.title': 'RefBoard 사용자 가이드',
+                'guide.intro': 'RefBoard를 200% 활용하는 방법을 상세히 안내해 드립니다. 이 가이드를 통해 기본적인 사용법부터 고급 기능까지 마스터하여 창작 프로세스를 혁신하세요.',
+                'sec1.title': '✨ 시작하기',
+                'sec1.desc1': 'RefBoard는 단순한 이미지 뷰어가 아닙니다. 무한한 캔버스 공간에서 수천 장의 레퍼런스를 정리하고, 팀원과 실시간으로 아이디어를 발전시키는 통합 비주얼 워크스페이스입니다.',
+                'sec1.desc2.strong': '설치 및 실행:',
+                'sec1.desc2.text': 'Windows 사용자는 [다운로드] 버튼을 통해 설치 파일을 받으실 수 있습니다. 설치 후 Google 계정으로 로그인하면 즉시 Google Drive와 연동되어 클라우드 저장이 활성화됩니다.',
+                'sec2.title': '🚀 주요 기능 마스터하기',
+                'sec2.sub1.title': '1. 무한 캔버스 활용',
+                'sec2.sub1.desc': 'RefBoard의 캔버스는 크기 제한이 없습니다. 화면의 빈 공간을 드래그하여(Pan) 자유롭게 이동하고, 마우스 휠(또는 Ctrl + 휠)로 부드럽게 줌인/줌아웃 할 수 있습니다. 프로젝트의 규모가 아무리 커져도 하나의 보드에 모든 자료를 담을 수 있습니다.',
+                'sec2.sub2.title': '2. 미디어 가져오기 (Drag & Drop)',
+                'sec2.sub2.desc': '가장 빠르고 강력한 기능입니다. 바탕화면의 이미지 파일이나 폴더, 또는 웹 브라우저의 이미지를 RefBoard 창으로 <strong>드래그 앤 드롭</strong>하세요.',
+                'sec2.sub2.li1': '<strong>이미지(JPG, PNG, GIF, WEBP):</strong> 즉시 로드되어 캔버스에 배치됩니다.',
+                'sec2.sub2.li2': '<strong>비디오(MP4):</strong> 자동 재생/루프 설정이 가능한 플레이어로 삽입됩니다.',
+                'sec2.sub2.li3': '<strong>PSD 파일:</strong> Photoshop 없이도 레이어 미리보기가 가능한 고화질 이미지로 변환되어 표시됩니다.',
+                'sec2.sub3.title': '3. 스마트 그룹 & 정렬',
+                'sec2.sub3.desc': '흩어진 이미지를 선택하고 Ctrl + G를 누르면 그룹이 생성됩니다. 그룹 내에서 이미지들은 자동으로 격자(Grid) 형태로 정렬되며, 그룹 제목을 더블 클릭하여 이름을 변경할 수 있습니다 ("캐릭터 시안", "배경 레퍼런스" 등).',
+                'sec3.title': '🎨 AI 이미지 생성 (Gemini Pro)',
+                'sec3.desc1': '아이디어가 막혔을 때, RefBoard에 내장된 Gemini Pro AI를 활용하세요. 우클릭 메뉴에서 <strong>"AI 이미지 생성"</strong>을 선택하거나 도구 모음의 AI 아이콘을 클릭합니다.',
+                'sec3.desc2': '프롬프트를 입력하면 고화질의 레퍼런스 이미지가 생성되어 즉시 캔버스에 추가됩니다. 별도의 브라우저를 열 필요 없이, 작업 흐름을 끊지 않고 영감을 얻을 수 있습니다.',
+                'sec4.title': '🤝 실시간 협업 가이드',
+                'sec4.desc': '원격 근무 시대의 필수 기능입니다. 보드 우측 상단의 <strong>[공유]</strong> 버튼을 눌러 팀원을 초대하세요.',
+                'sec4.li1': '<strong>실시간 커서:</strong> 상대방이 보고 있는 위치와 마우스 움직임이 이름표와 함께 실시간으로 표시됩니다.',
+                'sec4.li2': '<strong>동시 편집:</strong> 누군가 이미지를 옮기거나 크기를 조절하면, 모든 팀원의 화면에 즉시 반영됩니다.',
+                'sec4.li3': '<strong>드로잉 피드백:</strong> 펜 도구(P)를 사용하여 이미지 위에 직접 수정 사항을 그리거나 메모를 남기세요.',
+                'sec5.title': '⌨️ 필수 단축키 모음',
+                'sec5.li1': '드래그 : 화면 이동 (Pan)',
+                'sec5.li2': '실행 취소',
+                'sec5.li3': '다시 실행',
+                'sec5.li4': '선택한 아이템 삭제',
+                'sec5.li5': '복사 / 붙여넣기',
+                'sec5.li6': '그룹 만들기',
+                'sec5.li7': '그룹 해제',
+                'sec5.li8': '드래그 : 아이템 복제 이동',
+                'sec6.title': '❓ 자주 묻는 질문 (FAQ)',
+                'sec6.q1': 'Q. RefBoard는 무료인가요?',
+                'sec6.a1': 'A. 네, 현재 모든 핵심 기능은 무료로 제공됩니다. 개인 사용자와 소규모 팀은 비용 부담 없이 무제한으로 보드를 생성할 수 있습니다.',
+                'sec6.q2': 'Q. 데이터는 어디에 저장되나요?',
+                'sec6.a2': 'A. 모든 데이터는 사용자의 Google Drive에 저장되므로 보안이 강력하며, 저희 서버에는 파일을 저장하지 않아 프라이버시가 완벽하게 보호됩니다.',
+                'sec6.q3': 'Q. Google 계정이 꼭 필요한가요?',
+                'sec6.a3': 'A. 네, RefBoard는 Google Drive를 저장소로 사용하기 때문에 Google 계정 로그인이 필요합니다. 덕분에 별도의 회원가입 없이 기존 계정으로 바로 시작할 수 있습니다.',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.',
+                'footer.contactLabel': '문의:'
+            },
+            en: {
+                'nav.home': 'Home',
+                'nav.guide': 'Guide',
+                'nav.privacy': 'Privacy Policy',
+                'nav.terms': 'Terms of Service',
+                'nav.contact': 'Contact',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'guide.title': 'RefBoard User Guide',
+                'guide.intro': 'Learn how to use RefBoard to its fullest potential. From basics to advanced features, this guide will revolutionize your creative process.',
+                'sec1.title': '✨ Getting Started',
+                'sec1.desc1': 'RefBoard is not just an image viewer. It\'s an integrated visual workspace where you can organize thousands of references on an infinite canvas and develop ideas with your team in real-time.',
+                'sec1.desc2.strong': 'Installation & Launch:',
+                'sec1.desc2.text': 'Windows users can get the installer via the [Download] button. After installing, log in with your Google account to link with Google Drive for cloud storage.',
+                'sec2.title': '🚀 Mastering Core Features',
+                'sec2.sub1.title': '1. Infinite Canvas',
+                'sec2.sub1.desc': 'RefBoard\'s canvas has no size limits. Drag to pan across empty space, and use the mouse wheel (or Ctrl + Wheel) to zoom in and out smoothly. No matter how big your project gets, everything fits on one board.',
+                'sec2.sub2.title': '2. Importing Media (Drag & Drop)',
+                'sec2.sub2.desc': 'The fastest feature. <strong>Drag and drop</strong> image files, folders, or web images directly onto the RefBoard window.',
+                'sec2.sub2.li1': '<strong>Images (JPG, PNG, GIF, WEBP):</strong> Instantly loaded and placed on the canvas.',
+                'sec2.sub2.li2': '<strong>Videos (MP4):</strong> Inserted as players with auto-play/loop settings.',
+                'sec2.sub2.li3': '<strong>PSD Files:</strong> Converted to high-quality previews with layer support without needing Photoshop.',
+                'sec2.sub3.title': '3. Smart Grouping',
+                'sec2.sub3.desc': 'Select scattered images and press Ctrl + G to create a group. Images inside self-organize into a grid. Double-click the title to rename it (e.g., "Character Concepts", "Background Refs").',
+                'sec3.title': '🎨 AI Image Gen (Gemini Pro)',
+                'sec3.desc1': 'Stuck on ideas? Use the built-in Gemini Pro AI. Right-click and select <strong>"AI Image Generation"</strong> or click the AI icon in the toolbar.',
+                'sec3.desc2': 'Enter a prompt to generate high-quality references instantly on your canvas. Get inspired without breaking your workflow by leaving for a browser.',
+                'sec4.title': '🤝 Real-time Collaboration',
+                'sec4.desc': 'Essential for remote work. Click the <strong>[Share]</strong> button at the top right to invite team members.',
+                'sec4.li1': '<strong>Live Cursors:</strong> See where others are looking and their mouse movements in real-time.',
+                'sec4.li2': '<strong>Co-editing:</strong> Moves and resizes sync instantly to everyone\'s screen.',
+                'sec4.li3': '<strong>Drawing Feedback:</strong> Use the Pen tool (P) to mark corrections or leave notes directly on images.',
+                'sec5.title': '⌨️ Essential Shortcuts',
+                'sec5.li1': 'Drag : Pan Screen',
+                'sec5.li2': 'Undo',
+                'sec5.li3': 'Redo',
+                'sec5.li4': 'Delete Selected',
+                'sec5.li5': 'Copy / Paste',
+                'sec5.li6': 'Group',
+                'sec5.li7': 'Ungroup',
+                'sec5.li8': 'Drag : Duplicate Move',
+                'sec6.title': '❓ FAQ',
+                'sec6.q1': 'Q. Is RefBoard free?',
+                'sec6.a1': 'A. Yes, all core features are currently free. Individual users and small teams can create unlimited boards.',
+                'sec6.q2': 'Q. Where is data stored?',
+                'sec6.a2': 'A. All data is stored in your Google Drive for strong security. We do not store your files on our servers, ensuring privacy.',
+                'sec6.q3': 'Q. Is a Google account required?',
+                'sec6.a3': 'A. Yes, since RefBoard uses Google Drive for storage, a Google account is required. This allows you to start immediately without a separate sign-up.',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.',
+                'footer.contactLabel': 'Contact:'
+            }
+        };
+
+        // Get saved language or default to Korean
+        let currentLang = localStorage.getItem('language') || 'ko';
+
+        // Language switcher function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update language button active state
+            const langLabels = document.querySelectorAll('.lang-label');
+            langLabels.forEach((label, index) => {
+                if ((lang === 'ko' && index === 0) || (lang === 'en' && index === 1)) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage(currentLang);
+
+            // Language button click handler
+            document.getElementById('langBtn').addEventListener('click', () => {
+                const newLang = currentLang === 'ko' ? 'en' : 'ko';
+                switchLanguage(newLang);
+            });
+        });
+    </script>
 </body>
 
 </html>
