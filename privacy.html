@@ -34,6 +34,7 @@
             </a>
             <nav>
                 <a href="index.html" data-i18n="nav.home">홈</a>
+                <a href="guide.html" data-i18n="nav.guide">가이드</a>
                 <a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a>
                 <a href="terms.html" data-i18n="nav.terms">이용약관</a>
                 <div class="language-switcher">
@@ -129,7 +130,8 @@
                 <section>
                     <h3 data-i18n="privacy.sec9.title">9. 문의</h3>
                     <p data-i18n="privacy.sec9.desc">개인정보 관련 문의사항이 있으시면 다음 이메일로 연락 주세요:</p>
-                    <p><strong data-i18n="privacy.sec9.emailLabel">이메일:</strong> <a href="mailto:trackk81@gmail.com" style="color: #60a5fa;">trackk81@gmail.com</a></p>
+                    <p><strong data-i18n="privacy.sec9.emailLabel">이메일:</strong> <a href="mailto:trackk81@gmail.com"
+                            style="color: #60a5fa;">trackk81@gmail.com</a></p>
                 </section>
             </div>
         </div>
@@ -144,8 +146,9 @@
             </div>
             <p class="copyright" data-i18n="footer.copyright">&copy; 2024 RefBoard Team. All rights reserved.</p>
             <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
-                <span data-i18n="footer.contactLabel">문의:</span> 
-                <a href="mailto:trackk81@gmail.com" style="color: #60a5fa; text-decoration: none;">trackk81@gmail.com</a>
+                <span data-i18n="footer.contactLabel">문의:</span>
+                <a href="mailto:trackk81@gmail.com"
+                    style="color: #60a5fa; text-decoration: none;">trackk81@gmail.com</a>
             </p>
         </div>
     </footer>
@@ -156,7 +159,60 @@
             ko: {
                 'privacy.title': '개인정보처리방침 - RefBoard',
                 'nav.home': '홈',
+                'nav.guide': '가이드',
                 'nav.privacy': '개인정보처리방침',
+                'nav.terms': '이용약관',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'privacy.heading': '개인정보처리방침',
+                'privacy.updated': '최종 업데이트: 2024년 12월',
+                'privacy.sec1.title': '1. 수집하는 정보',
+                'privacy.sec1.desc': 'RefBoard는 다음 정보를 수집합니다:',
+                'privacy.sec1.li1': '<strong>Google 계정 정보</strong>: 이메일 주소, 이름, 프로필 사진',
+                'privacy.sec1.li2': '<strong>보드 데이터</strong>: 사용자가 생성한 보드 파일 (이미지, 텍스트, 레이아웃)',
+                'privacy.sec1.li3': '<strong>사용 데이터</strong>: 협업 세션 정보 (실시간 커서 위치, 사용자 활동)',
+                'privacy.sec2.title': '2. 정보 사용 목적',
+                'privacy.sec2.desc': '수집된 정보는 다음 목적으로만 사용됩니다:',
+                'privacy.sec2.li1': '사용자 인증 및 계정 관리',
+                'privacy.sec2.li2': '보드 저장 및 동기화 (Google Drive)',
+                'privacy.sec2.li3': '실시간 협업 기능 제공',
+                'privacy.sec2.li4': '공유 및 권한 관리',
+                'privacy.sec3.title': '3. 정보 저장 및 보안',
+                'privacy.sec3.li1': '<strong>보드 데이터</strong>: 사용자의 Google Drive에 저장됩니다',
+                'privacy.sec3.li2': '<strong>협업 데이터</strong>: Firebase Realtime Database에 일시적으로 저장됩니다',
+                'privacy.sec3.li3': '<strong>인증 토큰</strong>: 로컬 기기에 암호화되어 저장됩니다',
+                'privacy.sec3.desc': 'RefBoard는 업계 표준 보안 방식을 사용하여 데이터를 보호합니다.',
+                'privacy.sec4.title': '4. 제3자 공유',
+                'privacy.sec4.desc': 'RefBoard는 사용자 데이터를 제3자와 공유하지 않습니다. 단, 다음 서비스는 사용됩니다:',
+                'privacy.sec4.li1': '<strong>Google Drive</strong>: 보드 파일 저장',
+                'privacy.sec4.li2': '<strong>Firebase</strong>: 실시간 협업 데이터 동기화',
+                'privacy.sec4.note': '이들 서비스는 각자의 개인정보처리방침을 따릅니다.',
+                'privacy.sec5.title': '5. 사용자 권리',
+                'privacy.sec5.desc': '사용자는 다음 권리를 가집니다:',
+                'privacy.sec5.li1': '언제든지 계정을 삭제할 수 있습니다',
+                'privacy.sec5.li2': 'Google Drive에서 보드 파일을 직접 삭제할 수 있습니다',
+                'privacy.sec5.li3': '앱 권한을 언제든지 철회할 수 있습니다',
+                'privacy.sec6.title': '6. 쿠키 및 추적',
+                'privacy.sec6.desc': 'RefBoard는 다음을 사용하지 않습니다:',
+                'privacy.sec6.li1': '광고 추적',
+                'privacy.sec6.li2': '분석 도구',
+                'privacy.sec6.li3': '제3자 쿠키',
+                'privacy.sec7.title': '7. 아동 개인정보',
+                'privacy.sec7.desc': 'RefBoard는 13세 미만 아동의 정보를 의도적으로 수집하지 않습니다.',
+                'privacy.sec8.title': '8. 변경 사항',
+                'privacy.sec8.desc': '본 방침이 변경될 경우, 앱 내에서 공지하며 이 페이지를 업데이트합니다.',
+                'privacy.sec9.title': '9. 문의',
+                'privacy.sec9.desc': '개인정보 관련 문의사항이 있으시면 다음 이메일로 연락 주세요:',
+                'privacy.sec9.emailLabel': '이메일:',
+                'footer.privacy': '개인정보처리방침',
+                'footer.terms': '이용약관',
+                'footer.contact': '문의하기',
+                'footer.contactLabel': '문의:',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.',
+                'privacy.title': 'Privacy Policy - RefBoard',
+                'nav.home': 'Home',
+                'nav.guide': 'Guide',
+                'nav.privacy': 'Privacy Policy',
                 'nav.terms': '이용약관',
                 'lang.korean': '한국어',
                 'lang.english': 'English',
@@ -209,6 +265,7 @@
             en: {
                 'privacy.title': 'Privacy Policy - RefBoard',
                 'nav.home': 'Home',
+                'nav.guide': 'Guide',
                 'nav.privacy': 'Privacy Policy',
                 'nav.terms': 'Terms of Service',
                 'lang.korean': '한국어',
