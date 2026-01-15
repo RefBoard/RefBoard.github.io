@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RefBoard Changelog - Version history and updates for the reference board tool">
+    <meta name="keywords" content="RefBoard updates, changelog, version history, new features">
+    <title>Changelog - RefBoard | Version History & Updates</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .changelog-container {
+            max-width: 900px;
+            margin: 80px auto 40px;
+            padding: 0 20px;
+        }
+
+        .version-block {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #3b82f6;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+        }
+
+        .version-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .version-number {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        .version-date {
+            color: #9ca3af;
+            font-size: 0.9em;
+        }
+
+        .change-category {
+            margin: 20px 0;
+        }
+
+        .category-title {
+            color: #60a5fa;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .change-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .change-list li {
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: #d1d5db;
+            position: relative;
+        }
+
+        .change-list li:before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .badge-new {
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+        }
+
+        .badge-fix {
+            background: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+        }
+
+        .badge-improve {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">RefBoard</a>
+            <div class="nav-links">
+                <a href="guide.html">Guide</a>
+                <a href="faq.html">FAQ</a>
+                <a href="blog/index.html">Blog</a>
+                <a href="changelog.html" class="active">Changelog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="changelog-container">
+        <h1 style="text-align: center; margin-bottom: 50px; font-size: 3em;">Changelog</h1>
+
+        <div class="version-block">
+            <div class="version-header">
+                <div class="version-number">v1.1.5 <span class="badge badge-new">Latest</span></div>
+                <div class="version-date">January 13, 2026</div>
+            </div>
+
+            <div class="change-category">
+                <div class="category-title">✨ New Features</div>
+                <ul class="change-list">
+                    <li>Added low-zoom flickering fix for stable rendering at 6-10% zoom levels</li>
+                    <li>Improved Alt+Right-click zoom sensitivity (reduced by 30% for better control)</li>
+                    <li>Enhanced SelectionBoundingBox with RAF optimization to reduce unnecessary re-renders</li>
+                </ul>
+            </div>
+
+            <div class="change-category">
+                <div class="category-title">🐛 Bug Fixes</div>
+                <ul class="change-list">
+                    <li>Fixed canvas transform synchronization issues during continuous zooming</li>
+                    <li>Resolved ghost rendering artifacts at low zoom levels</li>
+                    <li>Fixed boards list not updating after login/logout</li>
+                </ul>
+            </div>
+
+            <div class="change-category">
+                <div class="category-title">⚡ Performance</div>
+                <ul class="change-list">
+                    <li>Optimized real-time scale synchronization for smoother zoom experience</li>
+                    <li>Reduced SelectionBoundingBox re-render frequency by 95%</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="version-block">
+            <div class="version-header">
+                <div class="version-number">v1.1.4</div>
+                <div class="version-date">January 7, 2026</div>
+            </div>
+
+            <div class="change-category">
+                <div class="category-title">✨ New Features</div>
+                <ul class="change-list">
+                    <li>Increased default prompt node size by 50% for better visibility</li>
+                    <li>Added minimum size constraints for prompt nodes (400x250px)</li>
+                    <li>Group toolbar now always visible regardless of zoom level</li>
+                </ul>
+            </div>
+
+            <div class="change-category">
+                <div class="category-title">🐛 Bug Fixes</div>
+                <ul class="change-list">
+                    <li>Fixed context menu behavior during right-click+drag panning on groups</li>
+                    <li>Improved canvas panning with right-click on group elements</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="version-block">
+            <div class="version-header">
+                <div class="version-number">v1.1.0</div>
+                <div class="version-date">December 3, 2025</div>
+            </div>
+
+            <div class="change-category">
+                <div class="category-title">✨ New Features</div>
+                <ul class="change-list">
+                    <li>Added Pen & Eraser drawing tools for canvas annotations</li>
+                    <li>Implemented PenSettingsBar with brush size and color controls</li>
+                    <li>Created DrawingLayer component for smooth drawing rendering</li>
+                    <li>Integrated drawing functionality with zoom and pan features</li>
+                </ul>
+            </div>
+
+            <div class="change-category">
+                <div class="category-title">⚡ Performance</div>
+                <ul class="change-list">
+                    <li>Optimized drawing layer rendering for 60fps performance</li>
+                    <li>Improved pressure sensitivity for stylus/pen inputs</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="version-block">
+            <div class="version-header">
+                <div class="version-number">v1.0.0</div>
+                <div class="version-date">November 21, 2025</div>
+            </div>
+
+            <div class="change-category">
+                <div class="category-title">🎉 Initial Release</div>
+                <ul class="change-list">
+                    <li>Infinite canvas for unlimited reference organization</li>
+                    <li>Image and video support (JPG, PNG, GIF, WebP, MP4, WebM)</li>
+                    <li>Google Drive integration for secure cloud storage</li>
+                    <li>Real-time collaboration with team members</li>
+                    <li>Grouping and organization features</li>
+                    <li>Keyboard shortcuts for efficient workflow</li>
+                    <li>Export boards as high-resolution images</li>
+                    <li>Cross-platform support (Web, Windows, macOS, Linux)</li>
+                    <li>Minimap navigation for large boards</li>
+                    <li>Bookmark system for quick navigation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            style="text-align: center; margin-top: 80px; padding: 60px 20px; background: rgba(59, 130, 246, 0.1); border-radius: 16px;">
+            <h2 style="color: #60a5fa; margin-bottom: 20px;">Stay Updated</h2>
+            <p style="color: #d1d5db; font-size: 1.1em; max-width: 600px; margin: 0 auto 30px;">
+                Follow our development progress and get notified of new features
+            </p>
+            <a href="contact.html" class="cta-button"
+                style="display: inline-block; padding: 15px 40px; background: #3b82f6; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+                Subscribe to Updates
+            </a>
+        </div>
+    </div>
+
+    <footer style="margin-top: 100px;">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+                <a href="guide.html">Guide</a>
+            </div>
+            <p>&copy; 2024 RefBoard. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
