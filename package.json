@@ -1,0 +1,71 @@
+{
+  "name": "refboard",
+  "private": true,
+  "version": "1.1.6",
+  "description": "Visual reference board desktop application for designers and developers",
+  "author": "RefBoard Team",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:web": "tsc && vite build --config vite.config.web.ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "electron:dev": "concurrently -k \"cross-env NODE_ENV=development electron .\" \"npm run dev\"",
+    "electron:build": "vite build && electron-builder"
+  },
+  "dependencies": {
+    "ag-psd": "^29.0.0",
+    "dotenv": "^17.2.3",
+    "electron-store": "^11.0.2",
+    "firebase": "^12.6.0",
+    "googleapis": "^167.0.0",
+    "html2canvas": "^1.4.1",
+    "idb": "^8.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-rnd": "^10.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.1",
+    "electron-builder": "^24.13.3",
+    "firebase-tools": "^14.27.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.refboard.app",
+    "productName": "RefBoard",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "icon": "icon/RB_icon.png",
+    "win": {
+      "target": "nsis",
+      "icon": "icon/RB_icon.png",
+      "sign": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "RefBoard",
+      "installerIcon": "icon/RB_icon.ico",
+      "uninstallerIcon": "icon/RB_icon.ico",
+      "include": "build/installer.nsh"
+    }
+  }
+}

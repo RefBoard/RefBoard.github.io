@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RefBoard Ad Banner</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        /* Carbon Ads 스타일 커스터마이징 */
+        #carbonads {
+            display: flex;
+            max-width: 728px;
+            background-color: rgba(31, 41, 55, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        #carbonads a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        #carbonads a:hover {
+            color: #60a5fa;
+        }
+
+        #carbonads span {
+            position: relative;
+            display: block;
+        }
+
+        .carbon-img {
+            display: block;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .carbon-img img {
+            display: block;
+            height: 90px;
+            width: auto;
+            max-width: 130px;
+        }
+
+        .carbon-text {
+            display: block;
+            padding: 10px;
+            font-size: 13px;
+            line-height: 1.4;
+            color: #d1d5db;
+            flex: 1;
+        }
+
+        .carbon-poweredby {
+            display: block;
+            padding: 6px 10px;
+            background: rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 9px;
+            color: #9ca3af;
+            text-align: center;
+        }
+
+        /* 로딩 플레이스홀더 */
+        .ad-placeholder {
+            width: 728px;
+            height: 90px;
+            background: linear-gradient(135deg, rgba(55, 65, 81, 0.5), rgba(31, 41, 55, 0.5));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            color: rgba(156, 163, 175, 0.5);
+            font-size: 12px;
+        }
+
+        .ad-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: rgba(239, 68, 68, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Carbon Ads 광고 컨테이너 -->
+    <div id="ad-container">
+        <!-- 
+            실제 Carbon Ads 코드는 여기에 들어갑니다.
+            승인 받으면 아래 주석을 해제하고 YOUR_ZONE_ID를 실제 값으로 교체하세요:
+        -->
+        <!-- 
+        <script async type="text/javascript" 
+                src="//cdn.carbonads.com/carbon.js?serve=YOUR_ZONE_ID&placement=refboard" 
+                id="_carbonads_js">
+        </script>
+        -->
+
+        <!-- 임시 플레이스홀더 (Carbon Ads 승인 전) -->
+        <div class="ad-placeholder" id="placeholder">
+            <div style="text-align: center;">
+                <div style="font-size: 14px; margin-bottom: 4px;">📢 광고 영역</div>
+                <div>Carbon Ads 승인 대기 중...</div>
+                <div style="font-size: 10px; margin-top: 8px; opacity: 0.5;">
+                    728 x 90
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Carbon Ads 로딩 감지
+        setTimeout(() => {
+            const carbonAds = document.getElementById('carbonads');
+            const placeholder = document.getElementById('placeholder');
+
+            if (carbonAds) {
+                // Carbon Ads가 로드되면 플레이스홀더 숨김
+                if (placeholder) {
+                    placeholder.style.display = 'none';
+                }
+            } else {
+                // 로딩 실패 시 에러 메시지
+                if (placeholder) {
+                    placeholder.className = 'ad-placeholder ad-error';
+                    placeholder.innerHTML = `
+                        <div style="text-align: center;">
+                            <div style="font-size: 14px; margin-bottom: 4px;">⚠️ 광고 로딩 실패</div>
+                            <div style="font-size: 11px;">Carbon Ads 설정을 확인해주세요</div>
+                        </div>
+                    `;
+                }
+            }
+        }, 3000); // 3초 후 체크
+
+        // Electron에서 외부 링크 처리
+        document.addEventListener('click', function (e) {
+            const anchor = e.target.closest('a');
+            if (anchor && anchor.href) {
+                e.preventDefault();
+                // Electron의 shell.openExternal로 열기
+                if (window.electronAPI && window.electronAPI.openExternal) {
+                    window.electronAPI.openExternal(anchor.href);
+                } else {
+                    window.open(anchor.href, '_blank');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

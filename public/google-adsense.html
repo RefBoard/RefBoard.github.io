@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RefBoard Ad Banner - Google AdSense</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        /* Google AdSense 컨테이너 */
+        #adsense-container {
+            width: 728px;
+            height: 90px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* AdSense 광고 영역 */
+        ins.adsbygoogle {
+            display: block;
+            width: 728px;
+            height: 90px;
+        }
+
+        /* 로딩 플레이스홀더 */
+        .ad-placeholder {
+            width: 728px;
+            height: 90px;
+            background: linear-gradient(135deg, rgba(55, 65, 81, 0.5), rgba(31, 41, 55, 0.5));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            color: rgba(156, 163, 175, 0.5);
+            font-size: 12px;
+        }
+
+        .ad-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: rgba(239, 68, 68, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="adsense-container">
+        <!-- 
+            Google AdSense 광고 코드를 여기에 넣으세요.
+            승인 받으면 아래 주석을 해제하고 YOUR_AD_CLIENT_ID와 YOUR_AD_SLOT_ID를 실제 값으로 교체하세요:
+        -->
+        
+        <!-- 
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_CLIENT_ID"
+                crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_AD_CLIENT_ID"
+             data-ad-slot="YOUR_AD_SLOT_ID"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        -->
+
+        <!-- 임시 플레이스홀더 (Google AdSense 승인 전) -->
+        <div class="ad-placeholder" id="placeholder">
+            <div style="text-align: center;">
+                <div style="font-size: 14px; margin-bottom: 4px;">📢 광고 영역</div>
+                <div>Google AdSense 승인 대기 중...</div>
+                <div style="font-size: 10px; margin-top: 8px; opacity: 0.5;">
+                    728 x 90 (리더보드)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Google AdSense 로딩 감지
+        setTimeout(() => {
+            const adsenseAd = document.querySelector('.adsbygoogle');
+            const placeholder = document.getElementById('placeholder');
+
+            if (adsenseAd && adsenseAd.innerHTML.trim() !== '') {
+                // AdSense가 로드되면 플레이스홀더 숨김
+                if (placeholder) {
+                    placeholder.style.display = 'none';
+                }
+            } else {
+                // 로딩 실패 시 에러 메시지 (승인 전에는 정상)
+                // 승인 후에도 광고가 로드되지 않으면 에러 표시
+                if (placeholder && !placeholder.textContent.includes('승인 대기')) {
+                    placeholder.className = 'ad-placeholder ad-error';
+                    placeholder.innerHTML = `
+                        <div style="text-align: center;">
+                            <div style="font-size: 14px; margin-bottom: 4px;">⚠️ 광고 로딩 실패</div>
+                            <div style="font-size: 11px;">Google AdSense 설정을 확인해주세요</div>
+                        </div>
+                    `;
+                }
+            }
+        }, 5000); // 5초 후 체크 (AdSense는 로딩이 느릴 수 있음)
+
+        // Electron에서 외부 링크 처리
+        document.addEventListener('click', function (e) {
+            const anchor = e.target.closest('a');
+            if (anchor && anchor.href) {
+                e.preventDefault();
+                // Electron의 shell.openExternal로 열기
+                if (window.electronAPI && window.electronAPI.openExternal) {
+                    window.electronAPI.openExternal(anchor.href);
+                } else {
+                    window.open(anchor.href, '_blank');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+

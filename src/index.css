@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Custom slider styles */
+input[type="range"].slider {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"].slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading animations */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+
+  25% {
+    transform: translateX(10px) translateY(-5px);
+  }
+
+  50% {
+    transform: translateX(-5px) translateY(5px);
+  }
+
+  75% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+}
+
+@keyframes border-flow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -1000;
+  }
+}
+
+/* Performance optimizations for zoom */
+.canvas-content img,
+.canvas-content video {
+  /* Optimize rendering during zoom/transform */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  /* Isolate paint/layout from parent */
+  contain: layout paint;
+
+  /* CRITICAL: Skip expensive resampling - fast but pixelated at zoom */
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* 
+    Multi-Selection Drag Visibility Control 
+    When dragging starts globally (.dragging-items), hide the passive selected DOM items.
+    (Passive = Selected but NOT the active drag target).
+    The active drag target has .is-active-dragging class.
+    
+    This prevents the "Static Ghost Border" issue because Canvas draws the moving ghosts/borders for passive items.
+*/
+body.dragging-items .media-item-wrapper.selected:not(.is-active-dragging) {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* 
+   Active Drag Item: 
+   Visually hide opacity (so we see the Canvas version which is synced with passive items),
+   but KEEP pointer-events so react-rnd continues to receive mouse inputs!
+*/
+body.dragging-items .media-item-wrapper.selected.is-active-dragging {
+  opacity: 1 !important;
+  /* pointer-events: auto; is default, so it implies interactive but invisible */
+}
+
+/* 
+    Performance Optimization: Layer Promotion
+    Ensure the main container is on its own compositor layer.
+*/
+.canvas-content {
+  will-change: transform;
+  /* content-visibility: auto;  <-- Can't use here, container is always visible */
+}
+
+/* 
+    2D Canvas Unification:
+    Hide DOM actual media content for simple media items (Images, Ads) because 
+    they are now ALWAYS rendered on the 2D Canvas Layer.
+    We keep them in DOM for interaction (selection, dragging) and UI handles.
+    EXCEPTION: Selected images should be visible in DOM to appear on top.
+*/
+.media-item-wrapper.type-image:not(.selected)>img,
+.media-item-wrapper.type-ad:not(.selected)>div:not(.rotation-handle),
+.media-item-wrapper.type-video>video {
+  opacity: 0 !important;
+}
+
+/* Explicitly show selected images in DOM */
+.media-item-wrapper.type-image.selected>img {
+  opacity: 1 !important;
+}
+
+.media-item-wrapper.type-image,
+.media-item-wrapper.type-ad,
+.media-item-wrapper.type-video {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* 
+    Keep interactive items visible in DOM 
+    (PromptNode needs DOM UI for text editing)
+    Note: GenerationNode now uses hybrid rendering, so its opacity is controlled by React
+*/
+.media-item-wrapper.type-prompt_node,
+.media-item-wrapper.type-text {
+  /* PromptNode and TextItem always stay in DOM */
+}
+
+/* While dragging, we hide passive items in Canvas anyway if needed, 
+   but for unified mode, we stick to the rules above. */
+
+/* Performance Optimization: Layer Promotion */
+.canvas-content {
+  will-change: transform;
+}
+
+/* ...rest of existing styles optimized for unified mode... */

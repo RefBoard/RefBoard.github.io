@@ -1,0 +1,53 @@
+1. **refboard-website 리포지토리로 이동**
+   ```cmd
+   cd D:\Scripts\refboard-website
+   ```
+   (실제 경로로 변경)
+
+2. **변경사항 확인**
+   ```cmd
+   git status
+   ```
+   
+   **보이는 내용:**
+   ```
+   On branch main
+   Changes not staged for commit:
+     modified:   index.html
+   Untracked files:
+     downloads/RefBoard-Setup-0.0.1.exe
+   ```
+
+3. **파일 추가**
+   ```cmd
+   git add downloads/
+   git add index.html
+   ```
+   
+   또는 모든 변경사항 추가:
+   ```cmd
+   git add .
+   ```
+
+4. **커밋**
+   ```cmd
+   git commit -m "Add RefBoard installer v0.0.1"
+   ```
+
+5. **푸시**
+   ```cmd
+   git push origin main
+   ```
+
+홈페이지 푸시 다운로드 포합
+
+cd D:\Scripts\RefBoard
+npm run electron:build
+셋업 파일 빌드
+
+npm run electron:dev
+개발자 디버깅
+
+https://trackk81.github.io/refboard-website/index.html
+
+홈페이지

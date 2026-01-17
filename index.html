@@ -1,0 +1,52 @@
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Outfit:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- SEO & Open Graph Tags for Link Previews -->
+  <title>RefBoard - Your Infinite Reference Workspace</title>
+  <meta name="description" content="View and collaborate on boards with RefBoard desktop app.">
+
+  <meta property="og:title" content="RefBoard - Infinite Reference Workspace" />
+  <meta property="og:description" content="View and collaborate on boards with RefBoard. Click to open this board." />
+  <meta property="og:image" content="https://www.refboard.org/icon/RB_icon.png" />
+  <meta property="og:url" content="https://www.refboard.org/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RefBoard" />
+
+  <!-- Redirection Script -->
+  <script>
+    (function () {
+      // Check if we are running in a normal browser (not Electron)
+      const isElectron = navigator.userAgent.toLowerCase().includes(' electron/');
+
+      if (!isElectron) {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('boardId')) {
+          const deepLink = 'refboard://?' + params.toString();
+          console.log('Redirecting to:', deepLink);
+
+          // Attempt to open the custom protocol
+          window.location.href = deepLink;
+
+          // We don't close the window immediately so the user can see options
+        }
+      }
+    })();
+  </script>
+  <script type="module" src="/src/main.tsx"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+</body>
+
+</html>

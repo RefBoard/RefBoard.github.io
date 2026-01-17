@@ -1,0 +1,10 @@
+# 이 파일들은 민감한 정보를 포함하고 있으므로 Git에 업로드하지 마세요
+.env
+firebase-config.json
+node_modules/
+dist/
+dist-web/
+release/
+release_bak/
+*.log
+.DS_Store
