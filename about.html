@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="about.title">About Us - RefBoard</title>
+    <meta name="description" content="RefBoard 팀을 소개합니다. 디자이너와 크리에이티브 전문가를 위한 협업 도구를 만드는 우리의 비전과 미션을 확인하세요.">
+    <meta name="keywords" content="RefBoard 팀, About Us, 회사 소개, 디자인 협업 도구, 크리에이티브 팀">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="About Us - RefBoard Team" />
+    <meta property="og:description"
+        content="Learn about the team behind RefBoard, the collaborative reference board for creative professionals." />
+    <meta property="og:image" content="https://trackk81.github.io/images/og-image.png" />
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Deep Link Auto-Launch Script -->
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const boardId = params.get('boardId');
+
+            if (boardId) {
+                const deepLink = 'refboard://?' + params.toString();
+                console.log('Attempting to open desktop app:', deepLink);
+                window.location.href = deepLink;
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>RefBoard</span>
+            </a>
+            <nav>
+                <a href="index.html" data-i18n="nav.home">홈</a>
+                <a href="guide.html" data-i18n="nav.guide">가이드</a>
+                <a href="faq.html">FAQ</a>
+                <a href="blog/index.html">Blog</a>
+                <a href="about.html" data-i18n="nav.about">About Us</a>
+                <a href="contact.html" data-i18n="nav.contact">문의하기</a>
+                <div class="language-switcher">
+                    <button id="langBtn" class="lang-btn" aria-label="Language">
+                        <i class="fa-solid fa-globe"></i>
+                        <span class="lang-label" data-i18n="lang.korean">한국어</span>
+                        <span class="lang-separator">/</span>
+                        <span class="lang-label" data-i18n="lang.english">English</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="document-page">
+        <div class="container">
+            <h1 data-i18n="about.heading">About RefBoard</h1>
+
+            <div class="document-content">
+                <section>
+                    <h2 data-i18n="about.mission.title">우리의 미션</h2>
+                    <p data-i18n="about.mission.desc1">
+                        RefBoard는 디자이너, 일러스트레이터, 크리에이티브 전문가들이 레퍼런스 이미지와 아이디어를 더 쉽게 관리하고
+                        협업할 수 있도록 돕기 위해 탄생했습니다. 우리는 크리에이티브 워크플로우가 더 직관적이고 효율적이어야 한다고 믿습니다.
+                    </p>
+                    <p data-i18n="about.mission.desc2">
+                        2024년부터 시작된 RefBoard 프로젝트는 실제 디자이너들의 피드백을 바탕으로 개발되었으며,
+                        Google Drive와의 완벽한 통합, 실시간 협업 기능, PSD 파일 미리보기 등 실용적인 기능들을 제공합니다.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 data-i18n="about.vision.title">우리의 비전</h2>
+                    <p data-i18n="about.vision.desc">
+                        우리의 목표는 전 세계 크리에이티브 팀들이 RefBoard를 통해 더 나은 결과물을 만들어낼 수 있도록 돕는 것입니다.
+                        레퍼런스 관리부터 팀 협업까지, RefBoard는 크리에이티브 프로세스의 모든 단계를 지원합니다.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 data-i18n="about.values.title">핵심 가치</h2>
+                    <div style="display: grid; gap: 2rem; margin-top: 1.5rem;">
+                        <div>
+                            <h3 style="color: #60a5fa; margin-bottom: 0.5rem;">
+                                <i class="fa-solid fa-lightbulb" style="margin-right: 0.5rem;"></i>
+                                <span data-i18n="about.values.innovation">혁신</span>
+                            </h3>
+                            <p data-i18n="about.values.innovation.desc">
+                                우리는 항상 새로운 기술과 방법을 탐구하여 사용자 경험을 개선합니다.
+                                최신 웹 기술과 AI를 활용하여 더 스마트한 도구를 만들어갑니다.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: #60a5fa; margin-bottom: 0.5rem;">
+                                <i class="fa-solid fa-users" style="margin-right: 0.5rem;"></i>
+                                <span data-i18n="about.values.collaboration">협업</span>
+                            </h3>
+                            <p data-i18n="about.values.collaboration.desc">
+                                실시간 협업 기능을 통해 팀원들이 언제 어디서나 함께 작업할 수 있습니다.
+                                거리의 제약 없이 아이디어를 공유하고 발전시킬 수 있습니다.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: #60a5fa; margin-bottom: 0.5rem;">
+                                <i class="fa-solid fa-shield-halved" style="margin-right: 0.5rem;"></i>
+                                <span data-i18n="about.values.privacy">개인정보 보호</span>
+                            </h3>
+                            <p data-i18n="about.values.privacy.desc">
+                                사용자 데이터는 Google Drive에 안전하게 저장되며, 우리는 어떠한 개인정보도
+                                수집하거나 제3자와 공유하지 않습니다.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 style="color: #60a5fa; margin-bottom: 0.5rem;">
+                                <i class="fa-solid fa-rocket" style="margin-right: 0.5rem;"></i>
+                                <span data-i18n="about.values.simplicity">단순함</span>
+                            </h3>
+                            <p data-i18n="about.values.simplicity.desc">
+                                복잡한 기능보다는 직관적이고 쉬운 사용자 경험을 우선합니다.
+                                누구나 바로 시작할 수 있는 도구를 만듭니다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 data-i18n="about.story.title">RefBoard의 시작</h2>
+                    <p data-i18n="about.story.desc1">
+                        RefBoard는 디자이너로 일하던 개발자가 레퍼런스 이미지 관리의 불편함을 직접 경험하면서 시작되었습니다.
+                        수많은 폴더와 파일들 사이에서 원하는 레퍼런스를 찾기 어려웠고, 팀원들과 공유하는 것도 복잡했습니다.
+                    </p>
+                    <p data-i18n="about.story.desc2">
+                        "더 나은 방법이 있을 것이다"라는 생각에서 출발한 RefBoard는 이제 전 세계 디자이너들이 사용하는
+                        협업 도구로 성장했습니다. 우리는 계속해서 사용자 피드백을 듣고 개선해나가고 있습니다.
+                    </p>
+                </section>
+
+                <section>
+                    <h2 data-i18n="about.features.title">왜 RefBoard인가?</h2>
+                    <ul style="line-height: 1.8;">
+                        <li data-i18n="about.features.li1">
+                            <strong>무제한 보드 생성</strong> - Google Drive 저장공간만큼 자유롭게 사용
+                        </li>
+                        <li data-i18n="about.features.li2">
+                            <strong>실시간 협업</strong> - 팀원들의 커서를 실시간으로 확인하며 함께 작업
+                        </li>
+                        <li data-i18n="about.features.li3">
+                            <strong>PSD 미리보기</strong> - Photoshop 파일을 바로 확인
+                        </li>
+                        <li data-i18n="about.features.li4">
+                            <strong>드래그 앤 드롭</strong> - 직관적인 인터페이스로 빠른 작업
+                        </li>
+                        <li data-i18n="about.features.li5">
+                            <strong>무료</strong> - 모든 핵심 기능을 무료로 제공
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 data-i18n="about.join.title">함께 성장합니다</h2>
+                    <p data-i18n="about.join.desc">
+                        RefBoard는 오픈 소스 프로젝트이며, 커뮤니티의 피드백과 기여로 성장합니다.
+                        버그 리포트, 기능 제안, 사용 후기 등 모든 의견을 환영합니다.
+                    </p>
+                    <p style="margin-top: 1.5rem;">
+                        <strong data-i18n="about.contact.label">문의:</strong>
+                        <a href="mailto:trackk81@gmail.com" style="color: #60a5fa; text-decoration: none;">
+                            trackk81@gmail.com
+                        </a>
+                    </p>
+                    <p style="margin-top: 0.5rem;">
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/RefBoard/RefBoard.github.io"
+                            style="color: #60a5fa; text-decoration: none;" target="_blank" rel="noopener noreferrer">
+                            RefBoard on GitHub
+                        </a>
+                    </p>
+                </section>
+
+                <section
+                    style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(96, 165, 250, 0.1); border-radius: 1rem;">
+                    <h2 data-i18n="about.cta.title">지금 바로 시작하세요</h2>
+                    <p data-i18n="about.cta.desc" style="margin: 1rem 0 2rem;">
+                        RefBoard를 다운로드하고 더 나은 크리에이티브 워크플로우를 경험해보세요.
+                    </p>
+                    <a href="index.html#download" class="btn-primary" style="display: inline-block;">
+                        <i class="fa-brands fa-windows"></i>
+                        <span data-i18n="about.cta.download">Windows용 다운로드</span>
+                    </a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links" style="margin-bottom: 1rem;">
+                <a href="privacy.html" class="footer-link" data-i18n="footer.privacy">개인정보처리방침</a>
+                <a href="terms.html" class="footer-link" data-i18n="footer.terms">이용약관</a>
+                <a href="disclaimer.html" class="footer-link" data-i18n="footer.disclaimer">면책공고</a>
+                <a href="contact.html" class="footer-link" data-i18n="footer.contact">문의하기</a>
+            </div>
+            <p class="copyright" data-i18n="footer.copyright">&copy; 2024 RefBoard Team. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+                <span data-i18n="footer.contactLabel">문의:</span>
+                <a href="mailto:trackk81@gmail.com"
+                    style="color: #60a5fa; text-decoration: none;">trackk81@gmail.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Language translations
+        const translations = {
+            ko: {
+                'about.title': 'About Us - RefBoard',
+                'nav.home': '홈',
+                'nav.guide': '가이드',
+                'nav.about': 'About Us',
+                'nav.contact': '문의하기',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'about.heading': 'About RefBoard',
+                'about.mission.title': '우리의 미션',
+                'about.mission.desc1': 'RefBoard는 디자이너, 일러스트레이터, 크리에이티브 전문가들이 레퍼런스 이미지와 아이디어를 더 쉽게 관리하고 협업할 수 있도록 돕기 위해 탄생했습니다. 우리는 크리에이티브 워크플로우가 더 직관적이고 효율적이어야 한다고 믿습니다.',
+                'about.mission.desc2': '2024년부터 시작된 RefBoard 프로젝트는 실제 디자이너들의 피드백을 바탕으로 개발되었으며, Google Drive와의 완벽한 통합, 실시간 협업 기능, PSD 파일 미리보기 등 실용적인 기능들을 제공합니다.',
+                'about.vision.title': '우리의 비전',
+                'about.vision.desc': '우리의 목표는 전 세계 크리에이티브 팀들이 RefBoard를 통해 더 나은 결과물을 만들어낼 수 있도록 돕는 것입니다. 레퍼런스 관리부터 팀 협업까지, RefBoard는 크리에이티브 프로세스의 모든 단계를 지원합니다.',
+                'about.values.title': '핵심 가치',
+                'about.values.innovation': '혁신',
+                'about.values.innovation.desc': '우리는 항상 새로운 기술과 방법을 탐구하여 사용자 경험을 개선합니다. 최신 웹 기술과 AI를 활용하여 더 스마트한 도구를 만들어갑니다.',
+                'about.values.collaboration': '협업',
+                'about.values.collaboration.desc': '실시간 협업 기능을 통해 팀원들이 언제 어디서나 함께 작업할 수 있습니다. 거리의 제약 없이 아이디어를 공유하고 발전시킬 수 있습니다.',
+                'about.values.privacy': '개인정보 보호',
+                'about.values.privacy.desc': '사용자 데이터는 Google Drive에 안전하게 저장되며, 우리는 어떠한 개인정보도 수집하거나 제3자와 공유하지 않습니다.',
+                'about.values.simplicity': '단순함',
+                'about.values.simplicity.desc': '복잡한 기능보다는 직관적이고 쉬운 사용자 경험을 우선합니다. 누구나 바로 시작할 수 있는 도구를 만듭니다.',
+                'about.story.title': 'RefBoard의 시작',
+                'about.story.desc1': 'RefBoard는 디자이너로 일하던 개발자가 레퍼런스 이미지 관리의 불편함을 직접 경험하면서 시작되었습니다. 수많은 폴더와 파일들 사이에서 원하는 레퍼런스를 찾기 어려웠고, 팀원들과 공유하는 것도 복잡했습니다.',
+                'about.story.desc2': '"더 나은 방법이 있을 것이다"라는 생각에서 출발한 RefBoard는 이제 전 세계 디자이너들이 사용하는 협업 도구로 성장했습니다. 우리는 계속해서 사용자 피드백을 듣고 개선해나가고 있습니다.',
+                'about.features.title': '왜 RefBoard인가?',
+                'about.features.li1': '<strong>무제한 보드 생성</strong> - Google Drive 저장공간만큼 자유롭게 사용',
+                'about.features.li2': '<strong>실시간 협업</strong> - 팀원들의 커서를 실시간으로 확인하며 함께 작업',
+                'about.features.li3': '<strong>PSD 미리보기</strong> - Photoshop 파일을 바로 확인',
+                'about.features.li4': '<strong>드래그 앤 드롭</strong> - 직관적인 인터페이스로 빠른 작업',
+                'about.features.li5': '<strong>무료</strong> - 모든 핵심 기능을 무료로 제공',
+                'about.join.title': '함께 성장합니다',
+                'about.join.desc': 'RefBoard는 오픈 소스 프로젝트이며, 커뮤니티의 피드백과 기여로 성장합니다. 버그 리포트, 기능 제안, 사용 후기 등 모든 의견을 환영합니다.',
+                'about.contact.label': '문의:',
+                'about.cta.title': '지금 바로 시작하세요',
+                'about.cta.desc': 'RefBoard를 다운로드하고 더 나은 크리에이티브 워크플로우를 경험해보세요.',
+                'about.cta.download': 'Windows용 다운로드',
+                'footer.privacy': '개인정보처리방침',
+                'footer.terms': '이용약관',
+                'footer.disclaimer': '면책공고',
+                'footer.contact': '문의하기',
+                'footer.contactLabel': '문의:',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            },
+            en: {
+                'about.title': 'About Us - RefBoard',
+                'nav.home': 'Home',
+                'nav.guide': 'Guide',
+                'nav.about': 'About Us',
+                'nav.contact': 'Contact',
+                'lang.korean': '한국어',
+                'lang.english': 'English',
+                'about.heading': 'About RefBoard',
+                'about.mission.title': 'Our Mission',
+                'about.mission.desc1': 'RefBoard was created to help designers, illustrators, and creative professionals manage reference images and ideas more easily and collaborate better. We believe creative workflows should be more intuitive and efficient.',
+                'about.mission.desc2': 'Started in 2024, the RefBoard project was developed based on feedback from real designers, offering practical features like perfect Google Drive integration, real-time collaboration, and PSD file preview.',
+                'about.vision.title': 'Our Vision',
+                'about.vision.desc': 'Our goal is to help creative teams worldwide produce better results through RefBoard. From reference management to team collaboration, RefBoard supports every stage of the creative process.',
+                'about.values.title': 'Core Values',
+                'about.values.innovation': 'Innovation',
+                'about.values.innovation.desc': 'We constantly explore new technologies and methods to improve user experience. We create smarter tools using the latest web technologies and AI.',
+                'about.values.collaboration': 'Collaboration',
+                'about.values.collaboration.desc': 'Real-time collaboration features allow team members to work together anytime, anywhere. Share and develop ideas without distance constraints.',
+                'about.values.privacy': 'Privacy',
+                'about.values.privacy.desc': 'User data is safely stored in Google Drive, and we do not collect or share any personal information with third parties.',
+                'about.values.simplicity': 'Simplicity',
+                'about.values.simplicity.desc': 'We prioritize intuitive and easy user experience over complex features. We create tools anyone can start using right away.',
+                'about.story.title': 'RefBoard\'s Beginning',
+                'about.story.desc1': 'RefBoard started when a developer working as a designer experienced the inconvenience of managing reference images firsthand. It was difficult to find the desired reference among countless folders and files, and sharing with team members was complicated.',
+                'about.story.desc2': 'Starting from the thought "there must be a better way," RefBoard has now grown into a collaboration tool used by designers worldwide. We continue to listen to user feedback and improve.',
+                'about.features.title': 'Why RefBoard?',
+                'about.features.li1': '<strong>Unlimited Boards</strong> - Use freely as much as your Google Drive storage',
+                'about.features.li2': '<strong>Real-time Collaboration</strong> - Work together while seeing team members\' cursors in real-time',
+                'about.features.li3': '<strong>PSD Preview</strong> - View Photoshop files directly',
+                'about.features.li4': '<strong>Drag & Drop</strong> - Fast work with intuitive interface',
+                'about.features.li5': '<strong>Free</strong> - All core features provided for free',
+                'about.join.title': 'Growing Together',
+                'about.join.desc': 'RefBoard is an open-source project that grows with community feedback and contributions. We welcome all opinions including bug reports, feature suggestions, and usage reviews.',
+                'about.contact.label': 'Contact:',
+                'about.cta.title': 'Get Started Now',
+                'about.cta.desc': 'Download RefBoard and experience a better creative workflow.',
+                'about.cta.download': 'Download for Windows',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms of Service',
+                'footer.disclaimer': 'Disclaimer',
+                'footer.contact': 'Contact',
+                'footer.contactLabel': 'Contact:',
+                'footer.copyright': '© 2024 RefBoard Team. All rights reserved.'
+            }
+        };
+
+        // Get saved language or default to Korean
+        let currentLang = localStorage.getItem('language') || 'ko';
+
+        // Language switcher function
+        function switchLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+
+            // Update language button active state
+            const langLabels = document.querySelectorAll('.lang-label');
+            langLabels.forEach((label, index) => {
+                if ((lang === 'ko' && index === 0) || (lang === 'en' && index === 1)) {
+                    label.classList.add('active');
+                } else {
+                    label.classList.remove('active');
+                }
+            });
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            switchLanguage(currentLang);
+
+            // Language button click handler
+            document.getElementById('langBtn').addEventListener('click', () => {
+                const newLang = currentLang === 'ko' ? 'en' : 'ko';
+                switchLanguage(newLang);
+            });
+        });
+    </script>
+</body>
+
+</html>
